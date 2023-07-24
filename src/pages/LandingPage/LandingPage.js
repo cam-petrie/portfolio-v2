@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import AboutMe from "../../components/About/About";
 import SocialsBar from "../../components/Buttons/Socials";
 import SkillNav from "../../components/Navbar/Navbar";
+import FrontEnd from "../../components/FrontEnd/Cards";
 export default function Landing() {
   return (
     <Box
@@ -19,6 +20,7 @@ export default function Landing() {
       <AboutMe />
       <Box sx={{ display: "block", width: "100%" }} className="magic-box">
         <SkillNav />
+        <FrontEnd />
       </Box>
     </Box>
   );

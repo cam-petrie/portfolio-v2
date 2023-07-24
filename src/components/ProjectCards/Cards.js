@@ -9,10 +9,11 @@ import {
 } from "@mui/material";
 
 function Utils(tool) {
+  console.log(tool.tool);
   return (
     <>
       <Box>
-        <Typography>{tool}</Typography>
+        <Typography color="black">{tool.tool}</Typography>
       </Box>
     </>
   );
@@ -20,18 +21,20 @@ function Utils(tool) {
 
 export default function Cards(props) {
   // props = {heading, desc, stack, link};
-  let myStack = [...props.stack];
+  console.log(props.stack);
   return (
     <Card>
-      <CardHeader>{props.heading}</CardHeader>
+      <CardContent>
+        <Typography>{props.heading}</Typography>
+      </CardContent>
       <CardContent>
         <Typography>{props.desc}</Typography>
       </CardContent>
-      <CardActionArea>
-        {myStack.map((tool, i) => (
-          <Utils stack={tool} />
+      <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
+        {props.stack.map((tool, i) => (
+          <Utils tool={tool} />
         ))}
-      </CardActionArea>
+      </CardContent>
     </Card>
   );
 }

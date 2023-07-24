@@ -1,7 +1,6 @@
 import "./App.css";
 import Landing from "./pages/LandingPage/LandingPage";
-import { Box, Container, ThemeProvider, createTheme } from "@mui/material";
-// import Navbar from "./components/Navbar/Navbar";
+import { Box, ThemeProvider, createTheme } from "@mui/material";
 
 const font = "'Noto Sans', sans-serif";
 
@@ -22,7 +21,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Box bgcolor="primary.main" className="App">
-        {/* <Navbar /> */}
         <Landing />
       </Box>
     </ThemeProvider>

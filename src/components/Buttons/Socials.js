@@ -33,7 +33,6 @@ export default function SocialsBar() {
     <DownloadIcon sx={{ fontSize: imageSize }} />,
     <TwitterIcon sx={{ fontSize: imageSize }} />,
   ];
-  console.log(contents);
 
   return (
     <Box
