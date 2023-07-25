@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Typography, Box } from "@mui/material";
 import LandingBtn from "../Buttons/LandingButton";
+import SocialsBar from "../Buttons/Socials";
 
 export default function AboutMe() {
   return (
@@ -37,6 +38,7 @@ export default function AboutMe() {
         political science, machine learning, and economic growth theory.
       </Typography>
       <LandingBtn>Lets Connect</LandingBtn>
+      <SocialsBar />
     </Box>
   );
 }

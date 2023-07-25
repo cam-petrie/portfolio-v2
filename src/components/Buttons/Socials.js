@@ -10,7 +10,7 @@ let imageSize = "2rem";
 
 const SocialsButton = styled(Button)(({ theme }) => ({
   padding: 0,
-  marginTop: "2rem",
+
   width: "fit-content",
   color: theme.palette.primary.text,
   "&:hover": {
@@ -37,11 +37,9 @@ export default function SocialsBar() {
   return (
     <Box
       sx={{
-        flexDirection: "column",
         display: "flex",
-        width: "10%",
-        alignSelf: "center",
-        transform: "translateY(-6rem)",
+        marginTop: "6rem",
+        transform: "translateX(-1rem)",
       }}
     >
       {contents.map((content, i) => (

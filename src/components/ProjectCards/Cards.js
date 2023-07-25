@@ -6,14 +6,16 @@ import {
   CardHeader,
   Typography,
   Box,
+  CardMedia,
 } from "@mui/material";
 import styled from "@emotion/styled";
 
 const ProjectCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   color: theme.palette.primary.text,
-  margin: "1rem 5rem 1rem 5rem",
+  margin: "1rem 7.5rem 1rem 7.5rem",
   textTransform: "none",
+  display: "flex",
   "&:hover": {
     backgroundColor: theme.palette.primary.light,
   },
@@ -30,17 +32,6 @@ const Utils = styled(Box)(({ theme }) => ({
   borderRadius: "8px",
 }));
 
-// function Utils(tool) {
-//   console.log(tool.tool);
-//   return (
-//     <>
-//       <Box >
-//         <Typography variant="subtitle1">{tool.tool}</Typography>
-//       </Box>
-//     </>
-//   );
-// }
-
 export default function Cards(props) {
   const [hovered, setHovered] = React.useState();
   // props = {heading, desc, stack, link};
@@ -51,23 +42,46 @@ export default function Cards(props) {
       onMouseLeave={() => setHovered(false)}
       elevation={hovered ? 5 : 0}
     >
-      <CardContent>
-        <Typography className="heading" variant="h5">
-          {props.heading}
-        </Typography>
-      </CardContent>
-      <CardContent>
-        <Typography variant="body1">{props.desc}</Typography>
-      </CardContent>
-      <CardContent sx={{ display: "flex" }}>
-        {props.stack.map((tool, i) => (
-          <Utils>
-            <Typography fontSize={12} textTransform="uppercase" color="white">
-              {tool}
-            </Typography>
-          </Utils>
-        ))}
-      </CardContent>
+      <Box>
+        <CardContent>
+          <Typography className="heading" variant="h6">
+            {props.heading}
+          </Typography>
+        </CardContent>
+        <CardContent>
+          <Typography variant="body1">{props.desc}</Typography>
+        </CardContent>
+        <CardContent sx={{ display: "flex" }}>
+          {props.stack.map((tool, i) => (
+            <Utils>
+              <Typography fontSize={12} textTransform="uppercase" color="white">
+                {tool}
+              </Typography>
+            </Utils>
+          ))}
+        </CardContent>
+      </Box>
+      <CardMedia
+        sx={{
+          alignItems: "start",
+          right: 0,
+          display: "flex",
+          marginLeft: "auto",
+        }}
+      >
+        <img
+          style={{
+            borderRadius: "8px",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
+            height: "100px",
+            width: "150px",
+          }}
+          src={props.src}
+          alt="/"
+        />
+      </CardMedia>
     </ProjectCard>
   );
 }

@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Box } from "@mui/material";
 import AboutMe from "../../components/About/About";
-import SocialsBar from "../../components/Buttons/Socials";
 import SkillNav from "../../components/Navbar/Navbar";
 import FrontEnd from "../../components/FrontEnd/Cards";
 import { theme } from "../../App";
@@ -16,23 +15,21 @@ export default function Landing() {
     <Box
       className="landing"
       sx={{
-        padding: "5rem 0 0 1rem",
+        padding: "2.5rem 0rem 0 5rem",
         position: "fixed",
         display: "flex",
         height: "100%",
       }}
       color="primary.text"
     >
-      <SocialsBar />
       <AboutMe />
       <Box
         sx={{
           display: "block",
+          height: "calc(100% - 50px)",
           width: "100%",
           paddingLeft: "2.5rem",
-          overflow: "auto",
-          scrollbarColor: theme.palette.primary.highlight,
-          scrollbarWidth: "2px",
+          overflow: "scroll",
         }}
         id="magic-box"
         className="magic-box"
