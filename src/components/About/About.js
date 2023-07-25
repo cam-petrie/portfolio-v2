@@ -4,7 +4,13 @@ import LandingBtn from "../Buttons/LandingButton";
 
 export default function AboutMe() {
   return (
-    <Box sx={{ height: "100%", width: "45%", padding: "1rem 0 0 0rem" }}>
+    <Box
+      sx={{
+        height: "100%",
+        width: "50%",
+        padding: "1rem 0 0 0rem",
+      }}
+    >
       <Typography gutterBottom fontWeight={800} variant="h2">
         Cameron Petrie
       </Typography>

@@ -21,6 +21,12 @@ const NavLinks = styled(Button)(({ theme }) => ({
   "&:hover:after": {
     transform: "scaleX(1.1)",
   },
+  "&:focus": {
+    color: theme.palette.primary.highlight,
+  },
+  "&:focus:after": {
+    transform: "scaleX(1.1)",
+  },
 }));
 
 export default NavLinks;

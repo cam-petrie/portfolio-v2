@@ -7,34 +7,67 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import styled from "@emotion/styled";
 
-function Utils(tool) {
-  console.log(tool.tool);
-  return (
-    <>
-      <Box>
-        <Typography color="black">{tool.tool}</Typography>
-      </Box>
-    </>
-  );
-}
+const ProjectCard = styled(Card)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.primary.text,
+  margin: "1rem 5rem 1rem 5rem",
+  textTransform: "none",
+  "&:hover": {
+    backgroundColor: theme.palette.primary.light,
+  },
+  "&:hover .heading": {
+    color: theme.palette.primary.highlight,
+  },
+}));
+
+const Utils = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.light,
+  color: theme.palette.primary.light,
+  padding: "0.5rem 1rem 0.5rem 1rem",
+  marginRight: "1rem",
+  borderRadius: "8px",
+}));
+
+// function Utils(tool) {
+//   console.log(tool.tool);
+//   return (
+//     <>
+//       <Box >
+//         <Typography variant="subtitle1">{tool.tool}</Typography>
+//       </Box>
+//     </>
+//   );
+// }
 
 export default function Cards(props) {
+  const [hovered, setHovered] = React.useState();
   // props = {heading, desc, stack, link};
   console.log(props.stack);
   return (
-    <Card>
+    <ProjectCard
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      elevation={hovered ? 5 : 0}
+    >
       <CardContent>
-        <Typography>{props.heading}</Typography>
+        <Typography className="heading" variant="h5">
+          {props.heading}
+        </Typography>
       </CardContent>
       <CardContent>
-        <Typography>{props.desc}</Typography>
+        <Typography variant="body1">{props.desc}</Typography>
       </CardContent>
-      <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
+      <CardContent sx={{ display: "flex" }}>
         {props.stack.map((tool, i) => (
-          <Utils tool={tool} />
+          <Utils>
+            <Typography fontSize={12} textTransform="uppercase" color="white">
+              {tool}
+            </Typography>
+          </Utils>
         ))}
       </CardContent>
-    </Card>
+    </ProjectCard>
   );
 }
