@@ -7,10 +7,12 @@ const ProjectCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   color: theme.palette.primary.text,
   textTransform: "none",
+  borderRadius: "8px",
   display: "flex",
   "&:hover": {
     backgroundColor: theme.palette.primary.light,
     cursor: "pointer",
+    transition: "all 0.5s ease",
   },
   "&:hover .heading": {
     color: theme.palette.primary.highlight,
@@ -29,6 +31,7 @@ export default React.forwardRef(function Cards(props, ref) {
   // props = {heading, desc, stack, link};
   return (
     <motion.div
+      style={{ zIndex: 0 }}
       key={props.key}
       initial={{ scale: "90%" }}
       animate={{ scale: "100%" }}
@@ -43,7 +46,7 @@ export default React.forwardRef(function Cards(props, ref) {
       <ProjectCard
         ref={ref}
         sx={{
-          margin: { md: "1rem 7.5rem 1rem 5rem", xs: "1rem 0rem 1rem 0rem" },
+          margin: { md: "0rem 7.5rem 1rem 5rem", xs: "1rem 0rem 1rem 0rem" },
           padding: { md: "0 1rem 0 0", xs: 0 },
           flexDirection: { md: "initial", xs: "column" },
         }}

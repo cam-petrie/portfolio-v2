@@ -29,13 +29,14 @@ export default function SkillNav({ setComponent, setChecked, checked }) {
           position: "sticky",
           padding: "0 !important",
           top: 0,
+          zIndex: 999,
+
           backgroundColor: theme.palette.primary.main,
         }}
         disableGutters
       >
         <Box
           sx={{
-            zIndex: 999,
             flexGrow: 1,
             justifyContent: "space-evenly",
             display: { xs: "none", md: "flex" },
