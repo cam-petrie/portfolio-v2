@@ -1,10 +1,25 @@
 import * as React from "react";
-import { Toolbar, Box, Container } from "@mui/material";
+import { Toolbar, Box } from "@mui/material";
 import NavLinks from "../Buttons/Button";
 import { theme } from "../../App";
+import FrontEnd from "../FrontEnd/Cards";
+import BackEnd from "../BackEnd/Cards";
 
-export default function SkillNav() {
-  let pages = ["FrontEnd", "BackEnd", "3D Modeling", "Data Analysis"];
+export default function SkillNav({ setComponent, setChecked, checked }) {
+  let pages = [
+    { component: <FrontEnd checked={checked} />, page: "FrontEnd", index: 1 },
+    { component: <BackEnd checked={checked} />, page: "BackEnd", index: 2 },
+    {
+      component: <FrontEnd checked={checked} />,
+      page: "3D Modeling",
+      index: 3,
+    },
+    {
+      component: <FrontEnd checked={checked} />,
+      page: "Data Analysis",
+      index: 4,
+    },
+  ];
 
   return (
     <>
@@ -30,15 +45,19 @@ export default function SkillNav() {
           {pages.map((page) => (
             <NavLinks
               disableRipple
-              key={page}
+              key={page.index}
               // onClick={handleCloseNavMenu}
+              onClick={() => {
+                setComponent(page.component);
+              }}
               sx={{
+                fontSize: { md: "0.9rem", xs: "12px" },
                 mx: 2,
                 color: "white",
                 display: "block",
               }}
             >
-              {page}
+              {page.page}
             </NavLinks>
           ))}
         </Box>

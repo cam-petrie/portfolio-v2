@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 const NavLinks = styled(Button)(({ theme }) => ({
   textTransform: "upper",
   borderRadius: "0px",
-  fontSize: ".9rem",
+  fontSize: "0.9rem",
   "&:hover": {
     color: theme.palette.primary.highlight,
   },

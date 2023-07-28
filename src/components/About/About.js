@@ -2,17 +2,23 @@ import * as React from "react";
 import { Typography, Box } from "@mui/material";
 import LandingBtn from "../Buttons/LandingButton";
 import SocialsBar from "../Buttons/Socials";
+import { theme } from "../../App";
 
 export default function AboutMe() {
   return (
     <Box
       sx={{
         height: "100%",
-        width: "50%",
+        width: { md: "50%", xs: "100%" },
         padding: "1rem 0 0 0rem",
       }}
     >
-      <Typography gutterBottom fontWeight={800} variant="h2">
+      <Typography
+        gutterBottom
+        color={theme.palette.primary.highlight}
+        fontWeight={800}
+        variant="h2"
+      >
         Cameron Petrie
       </Typography>
       <Typography

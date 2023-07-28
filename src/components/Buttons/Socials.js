@@ -38,12 +38,14 @@ export default function SocialsBar() {
     <Box
       sx={{
         display: "flex",
-        marginTop: "6rem",
+        marginTop: { md: "6rem", xs: "2.5rem" },
         transform: "translateX(-1rem)",
       }}
     >
       {contents.map((content, i) => (
-        <SocialsButton disableRipple>{content}</SocialsButton>
+        <SocialsButton key={i} disableRipple>
+          {content}
+        </SocialsButton>
       ))}
     </Box>
   );

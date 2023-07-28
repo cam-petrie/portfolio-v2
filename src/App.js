@@ -21,7 +21,7 @@ export const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Box bgcolor="primary.main" className="App">
+      <Box bgcolor={theme.palette.primary.main} className="App">
         <Landing />
       </Box>
     </ThemeProvider>
