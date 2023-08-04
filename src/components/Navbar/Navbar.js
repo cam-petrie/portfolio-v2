@@ -4,13 +4,14 @@ import NavLinks from "../Buttons/Button";
 import { theme } from "../../App";
 import FrontEnd from "../FrontEnd/Cards";
 import BackEnd from "../BackEnd/Cards";
+import Showcase from "../3D Modeling/Showcase";
 
 export default function SkillNav({ setComponent, setChecked, checked }) {
   let pages = [
     { component: <FrontEnd checked={checked} />, page: "FrontEnd", index: 1 },
     { component: <BackEnd checked={checked} />, page: "BackEnd", index: 2 },
     {
-      component: <FrontEnd checked={checked} />,
+      component: <Showcase />,
       page: "3D Modeling",
       index: 3,
     },

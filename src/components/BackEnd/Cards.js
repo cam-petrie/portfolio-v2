@@ -28,7 +28,16 @@ export default function BackEnd() {
         timing={1}
         heading="Test Test"
         desc="Web app connected to Spotify web API. Allows users to connect to their personal Spotify account and listen to podcasts by 'Takeover Pods' while maneuvering the site. Additionally, users without a premium Spotify account will have access to episode excerpts. "
-        stack={["Node", "JavaScript", "Bootstrap", "etc."]}
+        stack={[
+          "Node",
+          "JavaScript",
+          "React",
+          "MaterialUI",
+          "ExpressJS",
+          "Figma",
+          "RESTful",
+          "CRUD",
+        ]}
         src={takeover}
       />
       <Cards

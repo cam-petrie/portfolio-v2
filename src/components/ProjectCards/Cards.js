@@ -2,6 +2,7 @@ import * as React from "react";
 import { Card, CardContent, Typography, Box, CardMedia } from "@mui/material";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
+import { theme } from "../../App";
 
 const ProjectCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -12,14 +13,14 @@ const ProjectCard = styled(Card)(({ theme }) => ({
   "&:hover": {
     backgroundColor: theme.palette.primary.light,
     cursor: "pointer",
-    transition: "all 0.5s ease",
+    transition: "all 0.25s ease",
   },
   "&:hover .heading": {
     color: theme.palette.primary.highlight,
   },
 }));
 const Utils = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.light,
+  backgroundColor: "#ffb803b1",
   color: theme.palette.primary.light,
   padding: "0.5rem 1rem 0.5rem 1rem",
   margin: "0.25rem",
@@ -46,9 +47,13 @@ export default React.forwardRef(function Cards(props, ref) {
       <ProjectCard
         ref={ref}
         sx={{
-          margin: { md: "0rem 7.5rem 1rem 5rem", xs: "1rem 0rem 1rem 0rem" },
-          padding: { md: "0 1rem 0 0", xs: 0 },
-          flexDirection: { md: "initial", xs: "column" },
+          margin: {
+            lg: "0rem 7.5rem 1rem 5rem",
+            md: "1rem 1rem 1rem 0rem",
+            xs: "1rem 0rem 1rem 0rem",
+          },
+          padding: { lg: "0 1rem 0 0", md: 0, xs: 0 },
+          flexDirection: { lg: "initial", md: "column", xs: "column" },
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -68,8 +73,10 @@ export default React.forwardRef(function Cards(props, ref) {
               <Utils key={i}>
                 <Typography
                   fontSize={12}
+                  fontWeight={600}
                   textTransform="uppercase"
-                  color="white"
+                  // color={hovered ? theme.palette.primary.highlight : "white"}
+                  color={"#fff1cd"}
                 >
                   {tool}
                 </Typography>
@@ -79,10 +86,10 @@ export default React.forwardRef(function Cards(props, ref) {
         </Box>
         <CardMedia
           sx={{
-            alignItems: { md: "center", xs: "start" },
+            alignItems: { lg: "center", md: "start", xs: "start" },
 
             display: "flex",
-            marginLeft: { md: "auto", xs: "1rem" },
+            marginLeft: { lg: "auto", md: "1rem", xs: "1rem" },
           }}
         >
           <img

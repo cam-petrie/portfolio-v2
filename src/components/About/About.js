@@ -9,8 +9,12 @@ export default function AboutMe() {
     <Box
       sx={{
         height: "100%",
-        width: { md: "50%", xs: "100%" },
-        padding: "1rem 0 0 0rem",
+        width: { md: "50%", xs: "95%" },
+        padding: {
+          lg: "1rem 0 0 0rem",
+          md: "1rem 0 0 0",
+          xs: "1rem 2.5rem 1rem 1rem",
+        },
       }}
     >
       <Typography
