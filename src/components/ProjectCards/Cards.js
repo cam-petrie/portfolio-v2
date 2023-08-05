@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { theme } from "../../App";
 
-const ProjectCard = styled(Card)(({ theme }) => ({
+export const ProjectCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   color: theme.palette.primary.text,
   textTransform: "none",
@@ -20,7 +20,7 @@ const ProjectCard = styled(Card)(({ theme }) => ({
   },
 }));
 const Utils = styled(Box)(({ theme }) => ({
-  backgroundColor: "#ffb803b1",
+  backgroundColor: theme.palette.primary.tint,
   color: theme.palette.primary.light,
   padding: "0.5rem 1rem 0.5rem 1rem",
   margin: "0.25rem",
@@ -57,7 +57,7 @@ export default React.forwardRef(function Cards(props, ref) {
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        elevation={hovered ? 5 : 0}
+        elevation={0}
       >
         <Box>
           <CardContent>
@@ -75,8 +75,12 @@ export default React.forwardRef(function Cards(props, ref) {
                   fontSize={12}
                   fontWeight={600}
                   textTransform="uppercase"
-                  // color={hovered ? theme.palette.primary.highlight : "white"}
-                  color={"#fff1cd"}
+                  color={
+                    hovered
+                      ? theme.palette.primary.highlight
+                      : theme.palette.primary.text
+                  }
+                  // color={theme.palette.primary.text}
                 >
                   {tool}
                 </Typography>

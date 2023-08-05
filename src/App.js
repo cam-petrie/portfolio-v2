@@ -8,6 +8,29 @@ const font = "'Noto Sans', sans-serif";
 //   palette: {
 //     primary: {
 //       //main: "#6b705c",
+//       main: "#c7d3dd",
+//       // highlight
+//       light: "#e8eef2",
+
+//       // paragraph text
+//       text: "#0a0908",
+
+//       // on hover
+//       lighterText: "#ccc9dc", //641220
+
+//       // name
+//       highlight: "#050505",
+//     },
+//   },
+//   typography: {
+//     fontFamily: font,
+//   },
+// });
+
+// export const theme = createTheme({
+//   palette: {
+//     primary: {
+//       //main: "#6b705c",
 //       main: "#c9e4de",
 //       light: "#d8e2dc",
 //       text: "#253237",
@@ -209,10 +232,11 @@ const font = "'Noto Sans', sans-serif";
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#023047",
-      light: "#022b40",
-      text: "#FFF",
-      highlight: "#ffb703",
+      main: "#0a192f",
+      tint: "#112240",
+      light: "#0d1f3b",
+      text: "#8892b0",
+      highlight: "#ccd6f6",
     },
   },
   typography: {

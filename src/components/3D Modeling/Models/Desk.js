@@ -8,7 +8,7 @@ export function Desk(props) {
   const desk = useRef();
   return (
     <group ref={desk} {...props} dispose={null}>
-      <group position={[0, 0, 0]} rotation={[0, 1.557, 0]} scale={4}>
+      <group position={[0, 3, 0]} rotation={[0, 1.557, 0]} scale={3}>
         <mesh
           geometry={nodes.Cube001.geometry}
           material={materials["Material.001"]}

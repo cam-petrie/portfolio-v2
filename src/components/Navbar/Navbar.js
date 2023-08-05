@@ -5,6 +5,7 @@ import { theme } from "../../App";
 import FrontEnd from "../FrontEnd/Cards";
 import BackEnd from "../BackEnd/Cards";
 import Showcase from "../3D Modeling/Showcase";
+import DataAnalysis from "../Data/DataAnalysis";
 
 export default function SkillNav({ setComponent, setChecked, checked }) {
   let pages = [
@@ -16,7 +17,7 @@ export default function SkillNav({ setComponent, setChecked, checked }) {
       index: 3,
     },
     {
-      component: <FrontEnd checked={checked} />,
+      component: <DataAnalysis checked={checked} />,
       page: "Data Analysis",
       index: 4,
     },
@@ -55,7 +56,7 @@ export default function SkillNav({ setComponent, setChecked, checked }) {
               sx={{
                 fontSize: { md: "0.9rem", xs: "12px" },
                 mx: 2,
-                color: "white",
+                color: `${theme.palette.primary.text}`,
                 display: "block",
               }}
             >

@@ -1,9 +1,9 @@
 import * as React from "react";
 import Cards from "../ProjectCards/Cards";
-import portfolio from "../../images/portfolio-homepage.png";
-import slick from "../../images/slicknspan.png";
-import takeover from "../../images/Takeover.png";
+import authentication from "../../images/blog-authentication.png";
+import mongo from "../../images/mongodb.png";
 import takeoverblog from "../../images/takeover_blog.png";
+import tableau from "../../images/tableau.png";
 
 export default function BackEnd() {
   return (
@@ -11,50 +11,34 @@ export default function BackEnd() {
       <Cards
         key={1}
         timing={0}
-        heading="Test"
-        desc="TEEEEEEESSTTTTTT"
+        heading="MongoDB Post Storage System/REST API"
+        desc="Blog post storage system using MERN stack. Offers a robust and scalable solution for managing and organizing blog content. Employed Mongoose (object modeling tool for MongoDB) to simplify data schema definition and facilitate interactions with the database."
         stack={[
+          "MongoDB",
+          "NoSQL Database",
           "Node",
-          "JavaScript",
-          "Three,js",
-          "WebGL",
-          "Next.js",
-          "Blender 3D",
+          "Mongoose",
+          "ExpressJS",
+          "REST API",
+          "CRUD",
         ]}
-        src={portfolio}
+        src={mongo}
       />
       <Cards
         key={2}
         timing={1}
-        heading="Test Test"
-        desc="Web app connected to Spotify web API. Allows users to connect to their personal Spotify account and listen to podcasts by 'Takeover Pods' while maneuvering the site. Additionally, users without a premium Spotify account will have access to episode excerpts. "
-        stack={[
-          "Node",
-          "JavaScript",
-          "React",
-          "MaterialUI",
-          "ExpressJS",
-          "Figma",
-          "RESTful",
-          "CRUD",
-        ]}
-        src={takeover}
+        heading="User Authentication For Blog"
+        desc="Leveraged Firebase's authentication services to seamlessly manage user sign-up, login, and password recovery process. Integrated Firebase's Authentication SDK into React application ensuring smooth onboarding and sign-in procedure. "
+        stack={["Node", "Firebase", "Authorization", "APIs"]}
+        src={authentication}
       />
       <Cards
         key={3}
         timing={2}
-        heading="CRUD Application"
-        desc="CRUD capable application utilizing RESTful services allowing bloggers to create, update, and delete posts following user authentication in Firebase. Posts are stored in MongoDB and customized filtering allows readers to sort by, article popularity, recency, and topic."
-        stack={["Node", "JavaScript", "Bootstrap", "etc."]}
-        src={takeoverblog}
-      />
-      <Cards
-        key={4}
-        timing={3}
-        heading="Slick N' Span"
-        desc="Frontend design and development for Mobile Detailing Service. Bootstrap, Figma, Adobe Photoshop/Express, and GSAP Scroll Triggers."
-        stack={["Node", "JavaScript", "Bootstrap", "etc."]}
-        src={slick}
+        heading="SQL Data Exploration"
+        desc="Data exploration, cleaning, and visualization using NVSS Heart Disease data from the state of NY (2021)"
+        stack={["MS SQL Server", "Microsoft Excel", "Tableau"]}
+        src={tableau}
       />
     </>
   );

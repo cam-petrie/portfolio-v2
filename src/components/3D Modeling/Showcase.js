@@ -16,15 +16,16 @@ export default function Showcase() {
         <Box
           sx={{
             margin: {
-              md: "2.5rem 7.5rem 1rem 7.5rem",
+              md: "2.5rem 12.5rem 1rem 12.5rem",
               xs: "1rem 0rem 1rem 0rem",
             },
             padding: { md: "0 1rem 0 1rem", xs: 0 },
           }}
         >
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" lineHeight={2}>
             I love bringing the web to life through the use of{"  "}
             <Typography
+              lineHeight={2}
               component="span"
               fontWeight={800}
               color={theme.palette.primary.highlight}
@@ -44,17 +45,17 @@ export default function Showcase() {
         <Box
           sx={{
             margin: {
-              md: "2.5rem 7.5rem 1rem 7.5rem",
+              md: "2.5rem 12.5rem 1rem 12.5rem",
               xs: "1rem 0rem 1rem 0rem",
             },
             padding: { md: "0 1rem 0 1rem", xs: 0 },
           }}
         >
-          <Typography variant="subtitle1">
+          {/* <Typography variant="subtitle1">
             In the ever-evolving landscape of web design, I find myself thrilled
             by the sheer potential of using 3D models and animations to breathe
             life into the digital realm.
-            {/* <Typography
+            <Typography
               component="span"
               fontWeight={800}
               color={theme.palette.primary.highlight}
@@ -63,8 +64,8 @@ export default function Showcase() {
               3D models
             </Typography>{" "}
             and <CustomText>animations</CustomText>. I have built over a hundred
-            models, but here are a few of my recent favorites: */}
-          </Typography>
+            models, but here are a few of my recent favorites:
+          </Typography> */}
         </Box>
         <Scene
           controls={
@@ -85,21 +86,7 @@ export default function Showcase() {
             },
             padding: { md: "0 1rem 0 1rem", xs: 0 },
           }}
-        >
-          <Typography variant="subtitle1">
-            I love bringing the web to life through the use of{"  "}
-            <Typography
-              component="span"
-              fontWeight={800}
-              color={theme.palette.primary.highlight}
-              fontSize="1.2rem"
-            >
-              3D models
-            </Typography>{" "}
-            and <CustomText>animations</CustomText>. I have built over a hundred
-            models, but here are a few of my recent favorites:
-          </Typography>
-        </Box>
+        ></Box>
         <Scene
           controls={
             <OrbitControls

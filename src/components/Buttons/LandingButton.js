@@ -2,8 +2,8 @@ import * as React from "react";
 import { Button } from "@mui/material";
 import styled from "@emotion/styled";
 
-const CustomButton = styled(Button)(({ theme }) => ({
-  fontSize: "1.5rem",
+export const CustomButton = styled(Button)(({ theme, fontSize }) => ({
+  fontSize: fontSize,
   background: "none",
   textTransform: "upper",
   padding: 0,
@@ -30,6 +30,21 @@ const CustomButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-export default function LandingBtn({ children }) {
-  return <CustomButton disableRipple>{children}</CustomButton>;
+export default function LandingBtn({
+  children,
+  contact,
+  setContact,
+  fontSize,
+}) {
+  return (
+    <CustomButton
+      fontSize={fontSize}
+      disableRipple
+      onClick={() => {
+        setContact(!contact);
+      }}
+    >
+      {children}
+    </CustomButton>
+  );
 }

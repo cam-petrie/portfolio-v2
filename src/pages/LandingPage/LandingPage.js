@@ -14,7 +14,6 @@ export default function Landing() {
   React.useEffect(() => {
     let child = document.getElementById("magic-box");
     console.log(child.offsetWidth);
-
     child.style.paddingRight = child.offsetWidth - child.clientWidth + "px";
   });
 
