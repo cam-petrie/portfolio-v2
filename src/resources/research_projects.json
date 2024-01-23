@@ -1,0 +1,26 @@
+
+[
+    {
+        "title": "Sustainable Development Goals (SDG) in Mexico",
+        "description": "Examined Mexico's Economic growth within the context of UN's SDG for Latin America. Performed competitive analysis of Mexican life expectancy, dropout rates, and enrollment in tertiary education with regards to its regional counterparts and long-term statistics.",
+        "tags": ["Bayesian Economics", "Econometrics", "Linear Regression", "Economic Growth Theory"],
+        "id": 1
+    },
+    {
+        "title": "Analysis of Determinants of Economic Growth",
+        "description": "Aimed to examine the effectiveness of international income data and its ability to determine which factors inhibit and/or facilitate economic growth.",
+        "tags": ["Bayesian Economics", "Economic Growth", "Monte Carlo Studies", "Algorithms"],
+        "id": 2
+    },
+    {
+        "title": "Respiratory Health Trends Research",
+        "description": "Conducted analysis of yearly data published by the Center for Disease Control to determine trends in adult nicotine dependence habits across the United States. Predicted future trends regarding the introduction of smokeless tobacco and electronic cigarettes - this included the likelihood of increased childhood use and death rates.",
+        "tags": ["MS SQL Server", "Data Visualization", "Public Health", "Linear Regression" ],
+        "id": 3
+
+    },
+    {"title": "NY - NVSS - Coronoary Health Trends Data Exploration/Visualization",
+    "description": "Exploratory analysis of coronary health trends as reported by NVSS for New York State in 2021. Attempting to discover correlation between exercise induced angina and long-term heart disease risk likelihood. Data visualized in Tableau.",
+    "tags": ["MS SQL Server", "Exploratory", "Tableau", "Data Cleaning", "Microsoft Excel"],
+    "id": 4}
+]
