@@ -2,7 +2,7 @@ import * as React from "react";
 import { TextField, Grid } from "@mui/material";
 import styled from "@emotion/styled";
 
-const borderWidth = "2px";
+// const borderWidth = "2px";
 
 const CustomField = styled(TextField)(({ theme }) => ({
   borderBottom: "2px solid transparent !important",

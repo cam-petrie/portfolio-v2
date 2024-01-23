@@ -1,39 +1,39 @@
 import * as React from "react";
-import { TextField, Box, Button, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { CustomTF } from "./CustomTextField";
 import { CustomButton } from "../Buttons/LandingButton";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 
 // import AlertDialog from "./confirmation";
 
 const Form = ({ theme }) => {
-  const [hover, setHovered] = React.useState();
-  const [open, setOpen] = React.useState(false);
-  console.log(process.env.NEXT_PUBLIC_SERVICE_ID);
+  // const [hover, setHovered] = React.useState();
+  // const [open, setOpen] = React.useState(false);
+  // console.log(process.env.NEXT_PUBLIC_SERVICE_ID);
   //state for submission notification
-  const form = React.useRef();
+  // const form = React.useRef();
   // referencing form current values
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
-        `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`,
-        form.current,
-        `${process.env.NEXT_PUBLIC_KEY}`
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          console.log("👋 Thanks for visiting");
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    setOpen(true);
-    e.target.reset();
-  };
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  //   emailjs
+  //     .sendForm(
+  //       `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
+  //       `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`,
+  //       form.current,
+  //       `${process.env.NEXT_PUBLIC_KEY}`
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //         console.log("👋 Thanks for visiting");
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  //   setOpen(true);
+  //   e.target.reset();
+  // };
   // email form submission handler
   return (
     <Box
@@ -64,7 +64,7 @@ const Form = ({ theme }) => {
             name="message"
           />
         </Grid>
-        <CustomButton fontSize="1.5rem" type="submit" onClick={sendEmail}>
+        <CustomButton fontSize="1.5rem" type="submit">
           Send Message
         </CustomButton>
       </form>

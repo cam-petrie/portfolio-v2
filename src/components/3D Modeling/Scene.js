@@ -1,12 +1,9 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import Floor from "./Models/Floor";
 
 export default function Scene({ children, controls, depth }) {
   const main = React.useRef();
   const cameraRef = React.useRef();
-  const lightRef = React.useRef();
-  console.log(cameraRef.current);
   return (
     <>
       <Canvas
