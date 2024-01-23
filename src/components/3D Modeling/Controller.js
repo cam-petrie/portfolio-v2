@@ -16,6 +16,7 @@ export default function OrbitController() {
 
   return (
     <OrbitControls
+    touches={false}
       enableZoom={false}
       enableDamping={true}
       dampingFactor={0.001}
