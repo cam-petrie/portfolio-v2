@@ -233,6 +233,16 @@ export const theme = createTheme({
   typography: {
     fontFamily: font,
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 975,
+      lg: 1200,
+      xl: 1536,
+      cards: 1700,
+    },
+  },
 });
 
 // export const theme = createTheme({

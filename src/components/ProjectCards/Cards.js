@@ -54,12 +54,12 @@ export default React.forwardRef(function Cards(props, ref) {
         ref={ref}
         sx={{
           margin: {
-            lg: "0rem 7.5rem 1rem 5rem",
+            cards: "0rem 7.5rem 1rem 5rem",
             md: "1rem 1rem 1rem 0rem",
             xs: "1rem 0rem 1rem 0rem",
           },
-          padding: { lg: "0 1rem 0 0", md: 0, xs: 0 },
-          flexDirection: { lg: "initial", md: "column", xs: "column" },
+          padding: { cards: "0 1rem 0 0", md: 0, xs: 0 },
+          flexDirection: { cards: "initial", md: "column", xs: "column" },
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -97,12 +97,11 @@ export default React.forwardRef(function Cards(props, ref) {
         </Box>
         <CardMedia
           sx={{
-            alignItems: { lg: "center", md: "start", xs: "start" },
-
+            alignItems: { cards: "center", md: "start", xs: "start" },
             display: "flex",
-            marginLeft: { lg: "auto", md: "1rem", xs: "0" },
-            flexGrow: { lg: "none", md: 1 },
-            justifyContent: { lg: "none", md: "flex-end" },
+            marginLeft: { cards: "auto", md: "1rem", xs: "0" },
+            flexGrow: { cards: "none", md: 1 },
+            justifyContent: { cards: "none", md: "flex-end" },
           }}
         >
           <Box
@@ -112,8 +111,8 @@ export default React.forwardRef(function Cards(props, ref) {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center center",
-              height: { lg: "150px", md: "100%", xs: "100%" },
-              width: { lg: "250px", md: "100%", xs: "100%" },
+              height: { cards: "150px", md: "100%", xs: "100%" },
+              width: { cards: "250px", md: "100%", xs: "100%" },
             }}
             src={props.src}
             alt="/"

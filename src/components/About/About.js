@@ -48,6 +48,14 @@ export default function AboutMe() {
       ) : (
         <>
           <Typography
+            fontSize="2rem"
+            fontWeight={600}
+            sx={{ display: { sm: "block", md: "none" } }}
+            color={theme.palette.primary.text.heading}
+          >
+            About
+          </Typography>
+          <Typography
             color={theme.palette.primary.text.subheading}
             padding="5rem 0 5rem 0"
             fontWeight={400}
