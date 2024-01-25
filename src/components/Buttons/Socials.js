@@ -18,9 +18,9 @@ const saveFile = () => {
 
 const SocialsButton = styled(Button)(({ theme }) => ({
   padding: 0,
-
+  minWidth: "64px",
   width: "fit-content",
-  color: theme.palette.primary.text.heading,
+  color: theme.palette.primary.text.subheading,
   "&:hover": {
     color: theme.palette.primary.highlight,
   },
@@ -62,7 +62,7 @@ export default function SocialsBar() {
     <Box
       sx={{
         display: "flex",
-        marginTop: { md: "6rem", xs: "2.5rem" },
+        marginTop: { md: "2.5rem", xs: "2.5rem" },
         transform: "translateX(-1rem)",
       }}
     >

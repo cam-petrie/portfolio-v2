@@ -15,59 +15,59 @@ export default function AboutMe() {
     <Box
       sx={{
         height: "100%",
-        width: { md: "50%", xs: "95%" },
+        width: { md: "50%", sm: "100%" },
         padding: {
-          lg: "5rem 0 0 0rem",
+          lg: "1rem 0 0 0rem",
           md: "1rem 0 0 0",
-          xs: "1rem 2.5rem 1rem 1rem",
+          xs: "1rem",
         },
       }}
     >
       <Typography
-        gutterBottom
         color={theme.palette.primary.text.heading}
         fontWeight={800}
-        variant="h2"
+        variant="h3"
       >
         {about.heading}
       </Typography>
-      <Box
-        sx={{
-          mt: "5rem",
-          height: "400px",
-          width: "100%",
-        }}
-      >
-        <Scene controls={<OrbitController />}>
-          <Laptop />
-        </Scene>
-      </Box>
 
       {contact ? (
         <Contact />
       ) : (
         <>
           <Typography
-            fontSize="2rem"
+            variant="h6"
             fontWeight={600}
-            sx={{ display: { sm: "block", md: "none" } }}
+            sx={{ display: { sm: "block", md: "none" }, mt: "2.5rem" }}
             color={theme.palette.primary.text.heading}
           >
             About
           </Typography>
           <Typography
             color={theme.palette.primary.text.subheading}
-            padding="5rem 0 5rem 0"
+            padding="1rem 0 1rem 0"
             fontWeight={400}
             gutterBottom
-            fontSize="1.25rem"
+            variant="subtitle1"
           >
             {about.subheading}
           </Typography>
+
+          <Box
+            sx={{
+              mt: "1rem",
+              height: "45vh",
+              width: "100%",
+            }}
+          >
+            <Scene controls={<OrbitController />}>
+              <Laptop />
+            </Scene>
+          </Box>
         </>
       )}
 
-      <LandingBtn fontSize="2rem" contact={contact} setContact={setContact}>
+      <LandingBtn fontSize="1.75rem" contact={contact} setContact={setContact}>
         {contact ? "Go Back" : "Lets Connect"}
       </LandingBtn>
       <SocialsBar />

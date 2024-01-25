@@ -17,6 +17,6 @@ export const CustomText = styled(Typography)(({ theme }) => ({
   WebkitTextFillColor: "transparent",
   animation: ` ${textclip} 2s linear infinite`,
   display: "inline-block",
-  fontSize: "1.25rem",
+  fontSize: theme.typography.body1.fontSize,
   fontWeight: "800",
 }));

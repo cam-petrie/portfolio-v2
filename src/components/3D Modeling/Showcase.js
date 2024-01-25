@@ -9,28 +9,32 @@ import OrbitController from "./Controller";
 export default function Showcase() {
   return (
     <>
-      <Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
         <Box
           sx={{
-            margin: {
-              md: "2.5rem 12.5rem 1rem 12.5rem",
-              xs: "1rem 0rem 1rem 0rem",
+            width: "90%",
+            margin: "0 auto",
+            padding: {
+              md: "0 2.5rem 2.5rem 2.5rem",
+
+              sm: "5rem 0 2.5rem 0",
+              xs: "5rem 0 2.5rem 0",
             },
-            padding: { md: "0 1rem 0 1rem", xs: 0 },
           }}
         >
-          <Typography
-            color={theme.palette.primary.text.body}
-            variant="subtitle1"
-            lineHeight={2}
-          >
+          <Typography color={theme.palette.primary.text.body} variant="body1">
             I love bringing the web to life through the use of{"  "}
             <Typography
-              lineHeight={2}
               component="span"
               fontWeight={800}
               color={theme.palette.primary.text.body}
-              fontSize="1.2rem"
+              variant="body1"
             >
               3D models
             </Typography>{" "}
@@ -40,20 +44,11 @@ export default function Showcase() {
             minimal latency.
           </Typography>
         </Box>
-        <Box sx={{ height: "600px" }}>
+        <Box sx={{ height: "30vw", width: "30vw", margin: "0 auto" }}>
           <Scene controls={<OrbitController />}>
             <Desk />
           </Scene>
         </Box>
-        <Box
-          sx={{
-            margin: {
-              md: "2.5rem 12.5rem 1rem 12.5rem",
-              xs: "1rem 0rem 1rem 0rem",
-            },
-            padding: { md: "0 1rem 0 1rem", xs: 0 },
-          }}
-        ></Box>
       </Box>
     </>
   );

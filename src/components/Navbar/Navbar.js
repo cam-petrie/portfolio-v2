@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import NavLinks from "../Buttons/Button";
+import { Link } from "react-scroll";
 import { theme } from "../../App";
 import FrontEnd from "../FrontEnd/Cards";
 import BackEnd from "../BackEnd/Cards";
@@ -34,7 +35,6 @@ export default function SkillNav({ setComponent, setChecked, checked }) {
       index: 4,
     },
   ];
-
   const handleDrawerToggle = () => {
     setOpen(!open);
   };
@@ -94,7 +94,15 @@ export default function SkillNav({ setComponent, setChecked, checked }) {
                       setComponent(page.component);
                     }}
                   >
-                    <ListItemText primary={page.page} />
+                    <Link
+                      to="magic-box"
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                    >
+                      <ListItemText primary={page.page} />
+                    </Link>
                   </ListItem>
                 ))}
               </List>
@@ -110,6 +118,7 @@ export default function SkillNav({ setComponent, setChecked, checked }) {
             marginBottom: "1.5rem",
             top: 0,
             zIndex: 999,
+            transform: { md: "translateY(-1rem)", sm: "translateY(1rem)" },
 
             backgroundColor: theme.palette.primary.main,
           }}

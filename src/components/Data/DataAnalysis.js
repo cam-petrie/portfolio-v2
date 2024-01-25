@@ -30,7 +30,6 @@ export default function DataAnalysis() {
             xs: "1rem 0rem 1rem 0rem",
           },
           padding: { md: "0 1rem 0 1rem", xs: 0 },
-          justifyContent: "center",
           display: "flex",
           flexDirection: "column",
         }}
@@ -38,8 +37,8 @@ export default function DataAnalysis() {
         <Box
           sx={{
             margin: {
-              lg: "0 10rem 2.5rem 10rem",
-              md: "0 5rem 2.5rem 5rem",
+              lg: "0 0 2.5rem 0",
+              md: "0 0 2.5rem 0",
               sm: "0 2.5rem 2.5rem 2.5rem",
               xs: "0 1.5rem 2.5rem 1.5rem",
             },
@@ -69,7 +68,7 @@ export default function DataAnalysis() {
           alignItems="stretch"
         >
           {ResearchProjects.map((project) => (
-            <Grid sx={{ display: "flex" }} item lg={6} md={12} sm={12} xs={12}>
+            <Grid sx={{ display: "flex" }} item lg={12} md={12} sm={12} xs={12}>
               <ResearchCard
                 title={project.title}
                 desc={project.description}

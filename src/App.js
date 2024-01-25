@@ -240,7 +240,7 @@ export const theme = createTheme({
       md: 975,
       lg: 1200,
       xl: 1536,
-      cards: 1700,
+      cards: 1440,
     },
   },
 });

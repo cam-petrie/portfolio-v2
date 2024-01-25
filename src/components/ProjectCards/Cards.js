@@ -66,13 +66,17 @@ export default React.forwardRef(function Cards(props, ref) {
         elevation={hovered ? 3 : 0}
       >
         <Box>
-          <CardContent>
-            <Typography className="heading" fontWeight={600} variant="h6">
+          <CardContent sx={{ mb: 0, pb: 0 }}>
+            <Typography className="heading" fontWeight={500} variant="h6">
               {props.heading}
             </Typography>
           </CardContent>
           <CardContent>
-            <Typography color={theme.palette.primary.text.body} variant="body1">
+            <Typography
+              color={theme.palette.primary.text.body}
+              fontWeight={100}
+              variant="body2"
+            >
               {props.desc}
             </Typography>
           </CardContent>
@@ -111,6 +115,13 @@ export default React.forwardRef(function Cards(props, ref) {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center center",
+              maxWidth: { cards: "250px", md: "35vw", sm: "60vw", xs: "100%" },
+              maxHeight: {
+                cards: "150px",
+                md: "30vh",
+                sm: "40vh",
+                xs: "100%",
+              },
               height: { cards: "150px", md: "100%", xs: "100%" },
               width: { cards: "250px", md: "100%", xs: "100%" },
             }}

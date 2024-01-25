@@ -12,7 +12,7 @@ export const CustomButton = styled(Button)(({ theme, fontSize }) => ({
   cursor: "pointer",
   outline: "inherit",
   display: "block",
-  fontWeight: 800,
+  fontWeight: 600,
   "&:hover": {
     color: theme.palette.primary.highlight,
   },
@@ -21,12 +21,12 @@ export const CustomButton = styled(Button)(({ theme, fontSize }) => ({
     content: '""',
     borderBottom: `3px solid ${theme.palette.primary.highlight}`,
     width: "100%",
-    transform: "scaleX(0.6)",
+    transform: "scaleX(0.5)",
     transition: "transform 250ms ease-in-out",
     transformOrigin: "0% 50%",
   },
   "&:hover:after": {
-    transform: "scaleX(1.1)",
+    transform: "scaleX(1)",
   },
 }));
 

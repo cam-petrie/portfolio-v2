@@ -33,7 +33,7 @@ export default function Landing() {
           display: "block",
           height: "calc(100% - 50px)",
           width: "100%",
-          padding: { xs: 1 },
+          padding: 1,
           paddingLeft: { md: "2.5rem" },
           overflow: "scroll",
         }}
