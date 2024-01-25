@@ -9,6 +9,7 @@ import {
   ListItem,
   ListItemText,
   AppBar,
+  ListItemButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import NavLinks from "../Buttons/Button";
@@ -83,8 +84,7 @@ export default function SkillNav({ setComponent, setChecked, checked }) {
             >
               <List>
                 {pages.map((page, index) => (
-                  <ListItem
-                    button
+                  <ListItemButton
                     key={index}
                     sx={{
                       textAlign: "center",
@@ -100,10 +100,13 @@ export default function SkillNav({ setComponent, setChecked, checked }) {
                       smooth={true}
                       offset={-70}
                       duration={500}
+                      onClick={() => {
+                        setComponent(page.component);
+                      }}
                     >
                       <ListItemText primary={page.page} />
                     </Link>
-                  </ListItem>
+                  </ListItemButton>
                 ))}
               </List>
             </Drawer>
