@@ -61,6 +61,9 @@ export default React.forwardRef(function Cards(props, ref) {
           padding: { cards: "0 1rem 0 0", md: 0, xs: 0 },
           flexDirection: { cards: "initial", md: "column", xs: "column" },
         }}
+        onClick={() => {
+          window.open(props.link);
+        }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         elevation={hovered ? 3 : 0}

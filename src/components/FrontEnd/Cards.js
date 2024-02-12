@@ -16,6 +16,7 @@ export default function FrontEnd() {
             <Showcase />
             <Cards
               key={1}
+              link="https://cam-petrie.vercel.app/"
               timing={0}
               heading="Portfolio v1"
               desc="Interactive web experience using Three.js, Blender 3D modeling, GSAP Scroll Triggers, and much more. Previous version of this portfolio."
@@ -32,6 +33,7 @@ export default function FrontEnd() {
 
             <Cards
               key={2}
+              link="https://takeoverpods.netlify.app/"
               timing={1}
               heading="Takeover Pods Blog and Podcasting Application"
               desc="Web app connected to Spotify web API. Allows users to connect to their personal Spotify account and listen to podcasts by 'Takeover Pods' while maneuvering the site. Additionally, users without a premium Spotify account will have access to episode excerpts. "
@@ -50,6 +52,7 @@ export default function FrontEnd() {
             <Cards
               key={3}
               timing={2}
+              link="https://slicknspan.netlify.app/"
               heading="Mobile Detailing Service FrontEnd"
               desc="Frontend design and development for Mobile Detailing Service. Bootstrap, Figma, Adobe Photoshop/Express, and GSAP Scroll Triggers."
               stack={[
