@@ -44,7 +44,7 @@ export default function SocialsBar() {
     {
       icon: <GitHubIcon sx={{ fontSize: imageSize }} />,
       click: null,
-      href: "https://github.com/Peach97",
+      href: "https://github.com/cam-petrie",
     },
     {
       icon: <DownloadIcon sx={{ fontSize: imageSize }} />,
