@@ -68,7 +68,7 @@ export default function AboutMe() {
       )}
 
       <LandingBtn fontSize="1.75rem" contact={contact} setContact={setContact}>
-        {contact ? "Go Back" : "Lets Connect"}
+        {contact ? "Go Back" : "Let's Connect"}
       </LandingBtn>
       <SocialsBar />
     </Box>
