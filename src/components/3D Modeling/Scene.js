@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import Camera from "./Camera";
 import ModelResizer from "./ModelResizer";
-import { CircularProgress } from "@mui/material";
 
 export default function Scene({ children, controls, depth }) {
   const main = React.useRef();
