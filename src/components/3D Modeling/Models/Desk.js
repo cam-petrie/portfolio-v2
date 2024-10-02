@@ -1,6 +1,5 @@
 import React, { forwardRef, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import Spin from "../Spin";
 import {animated, useSpring} from "@react-spring/three";
 const model = "/models/desk-chairs.glb";
 
