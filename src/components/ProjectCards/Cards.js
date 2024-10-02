@@ -36,6 +36,13 @@ const Utils = styled(Box)(({ theme }) => ({
 
 export default React.forwardRef(function Cards(props, ref) {
   const [hovered, setHovered] = React.useState();
+
+  const isLinkAvailable = props.link; // Check if link is provided
+
+  console.log(props.link);
+
+  console.log(isLinkAvailable);
+
   return (
     <motion.div
       style={{ zIndex: 0 }}
@@ -60,12 +67,19 @@ export default React.forwardRef(function Cards(props, ref) {
           },
           padding: { cards: "0 1rem 0 0", md: 0, xs: 0 },
           flexDirection: { cards: "initial", md: "column", xs: "column" },
+          // Conditionally set the cursor
+          cursor: isLinkAvailable ? "pointer" : "default",
         }}
-        onClick={() => {
-          window.open(props.link);
+        // Conditionally add onClick behavior
+        onClick={(e) => {
+          if (isLinkAvailable) {
+            window.open(props.link);
+          } else {
+            e.preventDefault();
+          }
         }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        onMouseEnter={() => isLinkAvailable && setHovered(true)}
+        onMouseLeave={() => isLinkAvailable && setHovered(false)}
         elevation={hovered ? 3 : 0}
       >
         <Box>
@@ -136,6 +150,7 @@ export default React.forwardRef(function Cards(props, ref) {
     </motion.div>
   );
 });
+
 
 export const ProjectDivider = ({ contents }) => {
   return (

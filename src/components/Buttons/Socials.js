@@ -4,15 +4,15 @@ import styled from "@emotion/styled";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import DownloadIcon from "@mui/icons-material/Download";
-import TwitterIcon from "@mui/icons-material/Twitter";
+// import TwitterIcon from "@mui/icons-material/Twitter";
 import FileSaver from "file-saver";
 
 let imageSize = "2rem";
 
 const saveFile = () => {
   FileSaver.saveAs(
-    "/resources/Cameron Petrie_Resume.png",
-    "Cameron Petrie Resume.png"
+    "/resources/Cameron Petrie_Resume.pdf",
+    "Cameron Petrie Resume.pdf"
   );
 };
 
@@ -51,11 +51,11 @@ export default function SocialsBar() {
       click: saveFile,
       href: null,
     },
-    {
-      icon: <TwitterIcon sx={{ fontSize: imageSize }} />,
-      click: null,
-      href: "https://twitter.com/KillinCam",
-    },
+    // {
+    //   icon: <TwitterIcon sx={{ fontSize: imageSize }} />,
+    //   click: null,
+    //   href: "https://twitter.com/KillinCam",
+    // },
   ];
 
   return (

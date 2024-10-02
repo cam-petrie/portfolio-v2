@@ -45,7 +45,7 @@ export default function Showcase() {
           </Typography>
         </Box>
         <Box sx={{ height: "30vw", width: "30vw", margin: "0 auto" }}>
-          <Scene controls={<OrbitController />}>
+          <Scene  controls={<OrbitController />}>
             <Desk />
           </Scene>
         </Box>

@@ -1,7 +1,7 @@
 import React, { useRef, forwardRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
-import page from "../../../images/me3.jpg";
+import page from "../../../images/me6.jpeg";
 import * as THREE from "three";
 import { TextureLoader } from "three";
 

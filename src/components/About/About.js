@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Link } from "@mui/material";
 import LandingBtn from "../Buttons/LandingButton";
 import SocialsBar from "../Buttons/Socials";
 import Scene from "../3D Modeling/Scene";
@@ -11,6 +11,11 @@ import about from "../../resources/landing_page.json";
 
 export default function AboutMe() {
   const [contact, setContact] = React.useState(false);
+
+  // Split the subheading text into an array of words
+  const subheadingWords = about.subheading.split(" ");
+  const lastWord = subheadingWords.pop(); // Extract the last word
+
   return (
     <Box
       sx={{
@@ -50,7 +55,12 @@ export default function AboutMe() {
             gutterBottom
             variant="subtitle1"
           >
-            {about.subheading}
+            {/* Display all words except the last */}
+            {subheadingWords.join(" ")}{" "}
+            {/* Render the last word as a link */}
+            <Link href={about.link} target="_blank" color={theme.palette.primary.text.subheading}>
+              {lastWord}
+            </Link>
           </Typography>
 
           <Box
