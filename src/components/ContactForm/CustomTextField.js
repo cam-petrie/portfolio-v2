@@ -2,19 +2,17 @@ import * as React from "react";
 import { TextField, Grid } from "@mui/material";
 import styled from "@emotion/styled";
 
-// const borderWidth = "2px";
-
 const CustomField = styled(TextField)(({ theme }) => ({
   borderBottom: "2px solid transparent !important",
   "& label": {
-    color: theme.palette.primary.text,
+    color: "white", // Ensures label color is white
     "&.Mui-focused": {
       color: theme.palette.primary.highlight,
     },
   },
 
   "& .MuiInputBase-root": {
-    color: theme.palette.primary.text,
+    color: "white", // Ensures input text color is white
     backgroundColor: "transparent !important",
     borderBottom: "2px solid transparent !important",
     "&:before": {
@@ -50,7 +48,7 @@ export const CustomTF = (props) => {
         multiline
         InputProps={{
           sx: { borderBottom: "transparent" },
-          inputProps: { style: { caretColor: "white" } },
+          inputProps: { style: { color: "white", caretColor: "white" } }, // Ensures input text and caret color are white
         }}
         InputLabelProps={{ style: { color: "white" } }}
         rows={props.rows}
