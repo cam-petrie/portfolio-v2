@@ -54,6 +54,8 @@ export const CustomTF = (props) => {
         rows={props.rows}
         label={props.label}
         type={props.type}
+        value={props.value}
+        onChange={props.onChange}
       >
         {props.children}
       </CustomField>
