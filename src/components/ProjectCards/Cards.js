@@ -39,9 +39,9 @@ export default React.forwardRef(function Cards(props, ref) {
 
   const isLinkAvailable = props.link; // Check if link is provided
 
-  console.log(props.link);
+  // console.log(props.link);
 
-  console.log(isLinkAvailable);
+  // console.log(isLinkAvailable);
 
   return (
     <motion.div

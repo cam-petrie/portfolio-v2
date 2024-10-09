@@ -2,7 +2,7 @@ import { animated, useSpring } from "@react-spring/three";
 
 
 const Spin = ({children}) => {
-    console.log(children);
+    // console.log(children);
 
     const rotation = useSpring({
         from: { rotation: [0, 0, 0] },

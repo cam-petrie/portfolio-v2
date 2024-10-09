@@ -1,5 +1,5 @@
 export default function Floor(depth) {
-  console.log(depth);
+  // console.log(depth);
   return (
     <mesh
       rotation-x={-Math.PI / 2}
