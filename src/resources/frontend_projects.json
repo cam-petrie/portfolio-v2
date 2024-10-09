@@ -1,5 +1,5 @@
 [
-  {"id": 4, "link": false, "timing": 0, "heading": "Survey Management Platform - Contract", "desc": "Self service tool allowing users to create surveys, manage responses, and visualize results. Integrated AI chatbot which can perform data analysis, provide insights, and interact with visualizations on dashboard.", "stack": ["Node", "TypeScript", "Ant Design", "Zustand", "AI Chatbot", "Graph Visualization"], "src": "cts"},
+  {"id": 4, "link": false, "timing": 0, "heading": "Survey Management Platform", "desc": "Self service tool allowing users to create surveys, manage responses, and visualize results. Integrated AI chatbot which can perform data analysis, provide insights, and interact with visualizations on dashboard.", "stack": ["Node", "TypeScript", "Ant Design", "Zustand", "AI Chatbot", "Graph Visualization"], "src": "cts"},
     {
       "id": 1,
       "link": "https://cam-petrie.vercel.app/",
