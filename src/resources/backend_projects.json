@@ -3,7 +3,7 @@
     "id": 6,
     "link": "",
     "timing": 0,
-    "heading": "AI Based Data Cleaning - Contract",
+    "heading": "AI Based Data Cleaning",
     "desc": "Leverages AI to automate the process of data cleaning, eliminating manual intervention and ensuring more efficient and accurate results. The automation streamlines data preparation, making it faster and more reliable for subsequent analyses.",
     "stack": ["Fastify API", "TypeScript", "Langchain", "PostgreSQL", "OpenAI API"],
     "src": "cts"
