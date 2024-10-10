@@ -1,5 +1,5 @@
 import React, { useRef, forwardRef } from "react";
-import { useGLTF, useTexture } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import * as THREE from "three";
@@ -14,7 +14,7 @@ function Model(props) {
   texture.generateMipmaps = false; // Disable mipmaps to maintain texture clarity
 
   // Load the GLTF model
-  const { nodes, materials } = useGLTF(modelPath);
+  const { nodes } = useGLTF(modelPath);
 
   // Refs for model and light
   const laptopRef = useRef();
