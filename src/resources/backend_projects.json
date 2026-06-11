@@ -4,7 +4,7 @@
     "link": "https://www.cognitivetalentsolutions.com/",
     "timing": 0,
     "heading": "Enterprise People Analytics Platform Backend",
-    "desc": "Built and maintained backend systems for a multi-tenant people analytics platform, including survey creation, participant management, response processing, email delivery, AI-powered insights, audit logging, and organization-scoped data access. Integrated PostgreSQL, Redis queues, Neo4j graph analysis, Mailgun, OpenAI/LangChain, and external HRIS data sources.",
+    "desc": "Built and maintained backend services for an enterprise people analytics platform, supporting survey management, participant workflows, analytics processing, AI-driven insights, and secure organization-level data access.",
     "stack": [
       "Bun",
       "Fastify",
@@ -20,28 +20,28 @@
     "src": "cts"
   },
   {
-    "id": 8,
+    "id": 10,
     "link": "https://www.cognitivetalentsolutions.com/",
     "timing": 1,
-    "heading": "Survey Automation and Response Processing API",
-    "desc": "Developed backend workflows for creating, publishing, testing, and tracking organizational surveys. Implemented participant upload flows, localized survey delivery, test survey handling, QR/link generation support, response validation, completion metrics, and reliable email delivery through Mailgun.",
+    "heading": "AI Insights and Cogni Assistant Backend",
+    "desc": "Developed AI-powered analytics and assistant features that generate insights, support conversational workflows, and help users explore organizational network data.",
     "stack": [
+      "OpenAI API",
+      "LangChain",
       "Fastify",
       "TypeScript",
       "PostgreSQL",
-      "Drizzle ORM",
-      "Mailgun",
-      "JWT",
-      "i18n"
+      "Prompt Engineering",
+      "Data Analysis"
     ],
-    "src": "cts"
+    "src": "cogni"
   },
   {
     "id": 9,
     "link": "https://www.cognitivetalentsolutions.com/",
     "timing": 2,
     "heading": "Passive ONA Data Pipeline",
-    "desc": "Built backend data processing pipelines for passive organizational network analysis, including Microsoft Graph/Entra ID ingestion, Redis-backed jobs, audit-safe processing, graph enrichment, and Neo4j-powered network analysis for collaboration and influence insights.",
+    "desc": "Built data pipelines for organizational network analysis, transforming communication and collaboration data into actionable workforce insights.",
     "stack": [
       "TypeScript",
       "Fastify",
@@ -52,56 +52,40 @@
       "Microsoft Graph API",
       "ETL"
     ],
-    "src": "cts"
+    "src": "passive"
   },
   {
-    "id": 10,
+    "id": 8,
     "link": "https://www.cognitivetalentsolutions.com/",
     "timing": 3,
-    "heading": "AI Insights and Cogni Assistant Backend",
-    "desc": "Implemented AI-assisted analytics features using OpenAI and LangChain to generate survey/report insights, translate survey content, and support Cogni chatbot workflows over organizational network data while preserving structured backend validation and tenant-scoped access.",
+    "heading": "Survey Automation and Response Processing API",
+    "desc": "Developed backend workflows for creating, distributing, and tracking organizational surveys, including participant management, response processing, and reporting.",
     "stack": [
-      "OpenAI API",
-      "LangChain",
       "Fastify",
       "TypeScript",
       "PostgreSQL",
-      "Prompt Engineering",
-      "Data Analysis"
+      "Drizzle ORM",
+      "Mailgun",
+      "JWT",
+      "i18n"
     ],
-    "src": "cts"
+    "src": "survey"
   },
   {
     "id": 5,
     "link": "https://github.com/Peach97/blockchain-creator",
-    "timing": 1,
+    "timing": 4,
     "heading": "Blockchain Creator",
-    "desc": "Proof of work consensus mechanism. Established network topology to facilitate communication between nodes. Defined numbers and roles of nodes in the network (miners & validators); generated first block.",
+    "desc": "Built a blockchain prototype featuring proof-of-work consensus, node communication, transaction validation, and block generation.",
     "stack": ["Java", "Kotlin", "Blockchain", "Git"],
     "src": "blockchain"
   },
   {
-    "id": 7,
-    "link": "https://github.com/Peach97/database-migration",
-    "timing": 1,
-    "heading": "Grocery Store DB Migration and Integration Project",
-    "desc": "Performed advanced PostgreSQL DB migrations using Flyway to ensure proper tracking of DB schema changes and versioning. Optimized using indexing techniques, as well as data structures such as linked lists, hash tables, stacks, and queues.",
-    "stack": [
-      "Java",
-      "Kotlin",
-      "JUnit",
-      "PostgreSQL",
-      "Flyway",
-      "Data Structures"
-    ],
-    "src": "db"
-  },
-  {
     "id": 1,
     "link": false,
-    "timing": 3,
+    "timing": 5,
     "heading": "MongoDB Post Storage System/REST API",
-    "desc": "Blog post storage system using MERN stack. Offers a robust and scalable solution for managing and organizing blog content. Employed Mongoose (object modeling tool for MongoDB) to simplify data schema definition and facilitate interactions with the database.",
+    "desc": "Built a scalable blog management platform with REST APIs for creating, storing, and managing content.",
     "stack": [
       "MongoDB",
       "NoSQL Database",

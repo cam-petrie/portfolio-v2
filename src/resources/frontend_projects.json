@@ -36,7 +36,7 @@
       "CSS Modules",
       "AI Chatbot"
     ],
-    "src": "cts"
+    "src": "passive"
   },
   {
     "id": 6,
@@ -54,7 +54,7 @@
       "QR Codes",
       "Dark Mode"
     ],
-    "src": "cts"
+    "src": "survey"
   },
   {
     "id": 7,
@@ -72,12 +72,12 @@
       "Prompt UX",
       "Data Visualization"
     ],
-    "src": "cts"
+    "src": "cogni"
   },
     {
       "id": 1,
       "link": "https://cam-petrie.vercel.app/",
-      "timing": 0,
+      "timing": 4,
       "heading": "Portfolio v1",
       "desc": "Interactive web experience using Three.js, Blender 3D modeling, GSAP Scroll Triggers, and much more. Previous version of this portfolio.",
       "stack": ["Node", "JavaScript", "Three.js", "WebGL", "Next.js", "Blender 3D"],
@@ -86,7 +86,7 @@
     {
       "id": 3,
       "link": "https://slicknspan.netlify.app/",
-      "timing": 2,
+      "timing": 5,
       "heading": "Mobile Detailing Service FrontEnd",
       "desc": "Frontend design and development for Mobile Detailing Service. Bootstrap, Figma, Adobe Photoshop/Express, and GSAP Scroll Triggers.",
       "stack": ["JavaScript", "React", "Bootstrap", "Adobe Photoshop", "Framer-Motion"],

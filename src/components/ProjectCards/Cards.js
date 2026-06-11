@@ -142,6 +142,7 @@ export default React.forwardRef(function Cards(props, ref) {
               },
               height: { cards: "150px", md: "100%", xs: "100%" },
               width: { cards: "250px", md: "100%", xs: "100%" },
+              ...props.imageSx,
             }}
             src={props.src}
             alt="/"
