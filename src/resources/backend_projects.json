@@ -3,7 +3,7 @@
     "id": 6,
     "link": "https://www.cognitivetalentsolutions.com/",
     "timing": 0,
-    "heading": "Enterprise People Analytics Platform Backend",
+    "heading": "Cognitive Talent Analyzer™",
     "desc": "Built and maintained backend services for an enterprise people analytics platform, supporting survey management, participant workflows, analytics processing, AI-driven insights, and secure organization-level data access.",
     "stack": [
       "Bun",

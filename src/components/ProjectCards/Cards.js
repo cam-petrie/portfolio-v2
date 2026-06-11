@@ -10,6 +10,7 @@ import {
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { ColorModeContext, theme } from "../../App";
+import awardIcon from "../../images/award-icon.png";
 
 export const ProjectCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -17,6 +18,8 @@ export const ProjectCard = styled(Card)(({ theme }) => ({
   textTransform: "none",
   borderRadius: "8px",
   display: "flex",
+  overflow: "visible",
+  position: "relative",
   "&:hover": {
     backgroundColor: theme.palette.primary.light,
     cursor: "pointer",
@@ -33,6 +36,44 @@ const Utils = styled(Box)(({ theme }) => ({
   margin: "0.2rem",
   borderRadius: "7px",
 }));
+
+const AwardRibbon = styled(Box)({
+  alignItems: "center",
+  backgroundColor: "#f1be35",
+  boxShadow: "0 6px 12px rgba(0, 0, 0, 0.2)",
+  display: "inline-flex",
+  height: "2.3rem",
+  justifyContent: "center",
+  padding: "0.2rem",
+  position: "absolute",
+  right: "-0.45rem",
+  top: "-0.45rem",
+  width: "2.3rem",
+  zIndex: 2,
+  "&::before": {
+    borderLeft: "0.45rem solid #9f7615",
+    borderTop: "0.45rem solid transparent",
+    bottom: "-0.45rem",
+    content: '""',
+    position: "absolute",
+    right: 0,
+  },
+  "&::after": {
+    borderBottom: "0.45rem solid #9f7615",
+    borderLeft: "0.45rem solid transparent",
+    content: '""',
+    left: "-0.45rem",
+    position: "absolute",
+    top: 0,
+  },
+});
+
+const AwardRibbonImage = styled(Box)({
+  height: "100%",
+  objectFit: "contain",
+  objectPosition: "center",
+  width: "100%",
+});
 
 export default React.forwardRef(function Cards(props, ref) {
   const [hovered, setHovered] = React.useState();
@@ -134,12 +175,9 @@ export default React.forwardRef(function Cards(props, ref) {
           }}
         >
           <Box
-            component="img"
             sx={{
-              borderRadius: "8px",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center center",
+              display: "inline-flex",
+              position: "relative",
               maxWidth: { cards: "250px", md: "35vw", sm: "60vw", xs: "100%" },
               maxHeight: {
                 cards: "150px",
@@ -149,11 +187,28 @@ export default React.forwardRef(function Cards(props, ref) {
               },
               height: { cards: "150px", md: "100%", xs: "100%" },
               width: { cards: "250px", md: "100%", xs: "100%" },
-              ...props.imageSx,
             }}
-            src={props.src}
-            alt="/"
-          />
+          >
+            <Box
+              component="img"
+              sx={{
+                borderRadius: "8px",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center center",
+                height: "100%",
+                width: "100%",
+                ...props.imageSx,
+              }}
+              src={props.src}
+              alt="/"
+            />
+            {props.awardRibbon ? (
+              <AwardRibbon>
+                <AwardRibbonImage component="img" src={awardIcon} alt="" />
+              </AwardRibbon>
+            ) : null}
+          </Box>
         </CardMedia>
       </ProjectCard>
     </motion.div>

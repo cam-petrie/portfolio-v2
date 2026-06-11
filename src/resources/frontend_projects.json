@@ -3,7 +3,7 @@
     "id": 4,
     "link": false,
     "timing": 0,
-    "heading": "Enterprise Survey and People Analytics Platform",
+    "heading": "Cognitive Talent Analyzer™",
     "desc": "Built a production React/TypeScript platform for survey creation, response tracking, ActiveONA network analysis, participant management, report generation, and AI-assisted insights. Implemented complex dashboards, dark mode theming, localized survey workflows, graph visualizations, resizable panels, interactive filters, and chatbot-driven data exploration.",
     "stack": [
       "React",

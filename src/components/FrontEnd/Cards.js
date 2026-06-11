@@ -30,7 +30,7 @@ export default function FrontEnd() {
       <AnimatePresence>
         <Grid container spacing={1} p={0}>
           <Showcase />
-          {frontendProjects.map((project) => (
+          {frontendProjects.map((project, index) => (
             <Cards
               key={project.id}
               link={project.link}
@@ -39,6 +39,14 @@ export default function FrontEnd() {
               desc={project.desc}
               stack={project.stack}
               src={imageMap[project.src]}
+              awardRibbon={
+                index === 0
+                  ? {
+                      kicker: "2025 Winner",
+                      label: "HR Tech Award: Best Innovative Talent Analytics",
+                    }
+                  : undefined
+              }
               imageSx={
                 project.src === "cogni"
                   ? {
