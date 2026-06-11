@@ -7,6 +7,7 @@ import cts from "../../images/cts.png";
 import survey from "../../images/survey.jpg";
 import passive from "../../images/passive.png";
 import cogni from "../../images/cogni-full-gif.gif";
+import dao from "../../images/dao.jpg";
 import { AnimatePresence } from "framer-motion";
 import Showcase from "../3D Modeling/Showcase";
 import { Grid, Box } from "@mui/material";
@@ -20,6 +21,7 @@ const imageMap = {
   survey: survey,
   passive: passive,
   cogni: cogni,
+  dao: dao,
 }
 
 export default function FrontEnd() {

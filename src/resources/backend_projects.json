@@ -72,9 +72,27 @@
     "src": "survey"
   },
   {
+    "id": 11,
+    "link": false,
+    "timing": 4,
+    "heading": "DAO and ONA Initiative",
+    "desc": "Planned and architected a 12-month DAO initiative for the Network-First Manifesto, including governance platform strategy, legal/compliance documentation, treasury workflows, founder training plans, and a DAO-focused ONA methodology for commercial services.",
+    "stack": [
+      "DAO Governance",
+      "Snapshot",
+      "Gnosis Safe",
+      "Tally",
+      "Aragon",
+      "Base Network",
+      "ONA",
+      "Web3 Strategy"
+    ],
+    "src": "dao"
+  },
+  {
     "id": 5,
     "link": "https://github.com/Peach97/blockchain-creator",
-    "timing": 4,
+    "timing": 5,
     "heading": "Blockchain Creator",
     "desc": "Built a blockchain prototype featuring proof-of-work consensus, node communication, transaction validation, and block generation.",
     "stack": ["Java", "Kotlin", "Blockchain", "Git"],
@@ -83,7 +101,7 @@
   {
     "id": 1,
     "link": false,
-    "timing": 5,
+    "timing": 6,
     "heading": "MongoDB Post Storage System/REST API",
     "desc": "Built a scalable blog management platform with REST APIs for creating, storing, and managing content.",
     "stack": [
