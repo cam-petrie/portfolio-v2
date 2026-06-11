@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { theme } from "../../App";
+import { ColorModeContext, theme } from "../../App";
 
 export const ProjectCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -36,6 +36,7 @@ const Utils = styled(Box)(({ theme }) => ({
 
 export default React.forwardRef(function Cards(props, ref) {
   const [hovered, setHovered] = React.useState();
+  const { setProjectCardHovering } = React.useContext(ColorModeContext);
 
   const isLinkAvailable = props.link; // Check if link is provided
 
@@ -45,7 +46,7 @@ export default React.forwardRef(function Cards(props, ref) {
 
   return (
     <motion.div
-      className="project-card-wrapper"
+      className={`project-card-wrapper ${hovered ? "project-card-active" : ""}`}
       style={{ zIndex: 0 }}
       key={props.key}
       initial={{ scale: "90%" }}
@@ -79,8 +80,14 @@ export default React.forwardRef(function Cards(props, ref) {
             e.preventDefault();
           }
         }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        onMouseEnter={() => {
+          setHovered(true);
+          setProjectCardHovering(true);
+        }}
+        onMouseLeave={() => {
+          setHovered(false);
+          setProjectCardHovering(false);
+        }}
         elevation={hovered ? 3 : 0}
       >
         <Box>

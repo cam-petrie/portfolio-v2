@@ -1,4 +1,5 @@
 import "./App.css";
+import * as React from "react";
 import Landing from "./pages/LandingPage/LandingPage";
 import { Box, ThemeProvider, createTheme } from "@mui/material";
 
@@ -213,9 +214,20 @@ const font = "'Noto Sans', sans-serif";
 //   },
 // });
 
-// shades of blue theme:
-export const theme = createTheme({
+const breakpoints = {
+  values: {
+    xs: 0,
+    sm: 600,
+    md: 975,
+    lg: 1200,
+    xl: 1536,
+    cards: 1440,
+  },
+};
+
+const darkTheme = createTheme({
   palette: {
+    mode: "dark",
     primary: {
       main: "#10213a",
       tint: "#263a56",
@@ -233,16 +245,38 @@ export const theme = createTheme({
   typography: {
     fontFamily: font,
   },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 975,
-      lg: 1200,
-      xl: 1536,
-      cards: 1440,
+  breakpoints,
+});
+
+const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#eef4fb",
+      tint: "#d5e2ef",
+      card: "#ffffff",
+      light: "#dfeaf5",
+      text: {
+        heading: "#10213a",
+        subheading: "#43546b",
+        body: "#23344d",
+        underline: "#c2d2e3",
+      },
+      highlight: "#1f7a8c",
     },
   },
+  typography: {
+    fontFamily: font,
+  },
+  breakpoints,
+});
+
+// Keep the exported theme object stable for modules that import it directly.
+export const theme = createTheme(darkTheme);
+export const ColorModeContext = React.createContext({
+  mode: "dark",
+  toggleColorMode: () => {},
+  setProjectCardHovering: () => {},
 });
 
 // export const theme = createTheme({
@@ -298,12 +332,34 @@ export const theme = createTheme({
 // });
 
 function App() {
+  const [mode, setMode] = React.useState("dark");
+  const [isProjectCardHovering, setProjectCardHovering] = React.useState(false);
+  const activeTheme = mode === "dark" ? darkTheme : lightTheme;
+  const colorMode = React.useMemo(
+    () => ({
+      mode,
+      toggleColorMode: () => {
+        setProjectCardHovering(false);
+        setMode((currentMode) => (currentMode === "dark" ? "light" : "dark"));
+      },
+      setProjectCardHovering,
+    }),
+    [mode]
+  );
+
+  Object.assign(theme, activeTheme);
+
   return (
-    <ThemeProvider theme={theme}>
-      <Box bgcolor={theme.palette.primary.main} className="App">
-        <Landing />
-      </Box>
-    </ThemeProvider>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={activeTheme}>
+        <Box
+          bgcolor={activeTheme.palette.primary.main}
+          className={`App ${isProjectCardHovering ? "project-card-hovering" : ""}`}
+        >
+          <Landing />
+        </Box>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 

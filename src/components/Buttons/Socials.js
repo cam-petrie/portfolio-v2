@@ -4,8 +4,11 @@ import styled from "@emotion/styled";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import DownloadIcon from "@mui/icons-material/Download";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 // import TwitterIcon from "@mui/icons-material/Twitter";
 import FileSaver from "file-saver";
+import { ColorModeContext } from "../../App";
 
 let imageSize = "2rem";
 
@@ -35,6 +38,7 @@ const SocialsButton = styled(Button)(({ theme }) => ({
 }));
 
 export default function SocialsBar() {
+  const { mode, toggleColorMode } = React.useContext(ColorModeContext);
   let contents = [
     {
       icon: <LinkedInIcon sx={{ fontSize: imageSize }} />,
@@ -50,6 +54,18 @@ export default function SocialsBar() {
       icon: <DownloadIcon sx={{ fontSize: imageSize }} />,
       click: saveFile,
       href: null,
+      label: "Download resume",
+    },
+    {
+      icon:
+        mode === "dark" ? (
+          <LightModeIcon sx={{ fontSize: imageSize }} />
+        ) : (
+          <DarkModeIcon sx={{ fontSize: imageSize }} />
+        ),
+      click: toggleColorMode,
+      href: null,
+      label: `Switch to ${mode === "dark" ? "light" : "dark"} mode`,
     },
     // {
     //   icon: <TwitterIcon sx={{ fontSize: imageSize }} />,
@@ -72,6 +88,7 @@ export default function SocialsBar() {
           onClick={content.click}
           href={content.href}
           target="_blank"
+          aria-label={content.label}
           disableRipple
         >
           {content.icon}
