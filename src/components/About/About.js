@@ -11,10 +11,41 @@ import about from "../../resources/landing_page.json";
 
 export default function AboutMe() {
   const [contact, setContact] = React.useState(false);
+  const [typedHeading, setTypedHeading] = React.useState("");
+  const [typedSubheading, setTypedSubheading] = React.useState("");
 
-  // Split the subheading text into an array of words
-  const subheadingWords = about.subheading.split(" ");
-  const lastWord = subheadingWords.pop(); // Extract the last word
+  const linkText = "CTS.";
+  const linkStart = about.subheading.lastIndexOf(linkText);
+  const headingComplete = typedHeading.length === about.heading.length;
+  const subheadingComplete = typedSubheading.length === about.subheading.length;
+  const typedSubheadingBeforeLink = typedSubheading.slice(0, linkStart);
+  const typedSubheadingLink = typedSubheading.slice(linkStart);
+
+  React.useEffect(() => {
+    const isTypingHeading = typedHeading.length < about.heading.length;
+    const isTypingSubheading =
+      !isTypingHeading && typedSubheading.length < about.subheading.length;
+
+    if (!isTypingHeading && !isTypingSubheading) {
+      return undefined;
+    }
+
+    const timeout = setTimeout(
+      () => {
+        if (isTypingHeading) {
+          setTypedHeading(about.heading.slice(0, typedHeading.length + 1));
+          return;
+        }
+
+        setTypedSubheading(
+          about.subheading.slice(0, typedSubheading.length + 1)
+        );
+      },
+      isTypingHeading ? 55 : 18
+    );
+
+    return () => clearTimeout(timeout);
+  }, [typedHeading, typedSubheading]);
 
   return (
     <Box
@@ -33,7 +64,8 @@ export default function AboutMe() {
         fontWeight={800}
         variant="h3"
       >
-        {about.heading}
+        {typedHeading}
+        {!headingComplete ? "|" : null}
       </Typography>
 
       {contact ? (
@@ -54,13 +86,19 @@ export default function AboutMe() {
             fontWeight={400}
             gutterBottom
             variant="subtitle1"
+            sx={{ minHeight: { xs: "8.5rem", md: "7rem" } }}
           >
-            {/* Display all words except the last */}
-            {subheadingWords.join(" ")}{" "}
-            {/* Render the last word as a link */}
-            <Link href={about.link} target="_blank" color={theme.palette.primary.text.subheading}>
-              {lastWord}
-            </Link>
+            {typedSubheadingBeforeLink}
+            {typedSubheadingLink ? (
+              <Link
+                href={about.link}
+                target="_blank"
+                color={theme.palette.primary.text.subheading}
+              >
+                {typedSubheadingLink}
+              </Link>
+            ) : null}
+            {headingComplete && !subheadingComplete ? "|" : null}
           </Typography>
 
           <Box
