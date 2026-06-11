@@ -29,9 +29,9 @@ export const ProjectCard = styled(Card)(({ theme }) => ({
 const Utils = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.primary.tint,
   color: theme.palette.primary.light,
-  padding: "0.5rem 1rem 0.5rem 1rem",
-  margin: "0.25rem",
-  borderRadius: "8px",
+  padding: "0.4rem 0.75rem",
+  margin: "0.2rem",
+  borderRadius: "7px",
 }));
 
 export default React.forwardRef(function Cards(props, ref) {
@@ -45,6 +45,7 @@ export default React.forwardRef(function Cards(props, ref) {
 
   return (
     <motion.div
+      className="project-card-wrapper"
       style={{ zIndex: 0 }}
       key={props.key}
       initial={{ scale: "90%" }}
@@ -78,8 +79,8 @@ export default React.forwardRef(function Cards(props, ref) {
             e.preventDefault();
           }
         }}
-        onMouseEnter={() => isLinkAvailable && setHovered(true)}
-        onMouseLeave={() => isLinkAvailable && setHovered(false)}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         elevation={hovered ? 3 : 0}
       >
         <Box>
@@ -101,8 +102,8 @@ export default React.forwardRef(function Cards(props, ref) {
             {props.stack.map((tool, i) => (
               <Utils key={i}>
                 <Typography
-                  fontSize={12}
-                  fontWeight={600}
+                  fontSize={11}
+                  fontWeight={500}
                   textTransform="uppercase"
                   color={
                     hovered

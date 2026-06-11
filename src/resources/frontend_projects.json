@@ -1,5 +1,79 @@
 [
-  {"id": 4, "link": false, "timing": 0, "heading": "Survey Management Platform", "desc": "Self service tool allowing users to create surveys, manage responses, and visualize results. Integrated AI chatbot which can perform data analysis, provide insights, and interact with visualizations on dashboard.", "stack": ["Node", "TypeScript", "Ant Design", "Zustand", "AI Chatbot", "Graph Visualization"], "src": "cts"},
+  {
+    "id": 4,
+    "link": false,
+    "timing": 0,
+    "heading": "Enterprise Survey and People Analytics Platform",
+    "desc": "Built a production React/TypeScript platform for survey creation, response tracking, ActiveONA network analysis, participant management, report generation, and AI-assisted insights. Implemented complex dashboards, dark mode theming, localized survey workflows, graph visualizations, resizable panels, interactive filters, and chatbot-driven data exploration.",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Zustand",
+      "React Query",
+      "Ant Design",
+      "Tailwind CSS",
+      "i18next",
+      "D3",
+      "React Force Graph",
+      "AI Chatbot"
+    ],
+    "src": "cts"
+  },
+  {
+    "id": 5,
+    "link": false,
+    "timing": 1,
+    "heading": "ActiveONA Network Analytics Dashboard",
+    "desc": "Developed an interactive organizational network analysis dashboard with 2D/3D graph visualization, participant filtering, searchable name and manager filters, resizable data drawers, detail popouts, privacy-aware name masking, and an embedded Cogni assistant that highlights and filters people directly from chatbot responses.",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Zustand",
+      "React Force Graph",
+      "D3",
+      "Ant Design",
+      "CSS Modules",
+      "AI Chatbot"
+    ],
+    "src": "cts"
+  },
+  {
+    "id": 6,
+    "link": false,
+    "timing": 2,
+    "heading": "Survey Creation and Management UI",
+    "desc": "Built a self-service survey creation and management experience with multi-step modals, participant uploads, test survey delivery, QR/link previewing, localized default templates, response dashboards, themed participant tables, dark mode support, and accurate completion/participant metrics.",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Ant Design",
+      "Zustand",
+      "i18next",
+      "CSV Uploads",
+      "QR Codes",
+      "Dark Mode"
+    ],
+    "src": "cts"
+  },
+  {
+    "id": 7,
+    "link": false,
+    "timing": 3,
+    "heading": "AI Report and Cogni Assistant Interface",
+    "desc": "Implemented frontend workflows for AI-assisted people analytics, including Cogni chatbot UI, Markdown response rendering, network interaction parsing, chart-specific insight generation, and polished dashboard/report experiences for organizational analysis.",
+    "stack": [
+      "React",
+      "TypeScript",
+      "React Markdown",
+      "Ant Design",
+      "Zustand",
+      "OpenAI",
+      "Prompt UX",
+      "Data Visualization"
+    ],
+    "src": "cts"
+  },
     {
       "id": 1,
       "link": "https://cam-petrie.vercel.app/",
@@ -8,15 +82,6 @@
       "desc": "Interactive web experience using Three.js, Blender 3D modeling, GSAP Scroll Triggers, and much more. Previous version of this portfolio.",
       "stack": ["Node", "JavaScript", "Three.js", "WebGL", "Next.js", "Blender 3D"],
       "src": "portfolio"
-    },
-    {
-      "id": 2,
-      "link": "https://takeoverpods.netlify.app/",
-      "timing": 1,
-      "heading": "Takeover Pods Blog and Podcasting Application",
-      "desc": "Web app connected to Spotify web API. Allows users to connect to their personal Spotify account and listen to podcasts by 'Takeover Pods' while maneuvering the site. Additionally, users without a premium Spotify account will have access to episode excerpts.",
-      "stack": ["Node", "JavaScript", "React", "MaterialUI", "ExpressJS", "Figma", "RESTful", "CRUD"],
-      "src": "takeover"
     },
     {
       "id": 3,

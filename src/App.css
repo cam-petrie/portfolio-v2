@@ -6,3 +6,12 @@
   width: 100%;
   justify-content: center;
 }
+
+.project-card-wrapper {
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+.magic-box:has(.project-card-wrapper:hover) .project-card-wrapper:not(:hover) {
+  opacity: 0.42;
+  filter: saturate(0.75);
+}

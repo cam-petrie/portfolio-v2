@@ -217,15 +217,15 @@ const font = "'Noto Sans', sans-serif";
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#1d3557",
-      tint: "#334967",
-      card: "#192f4d",
-      light: "#264064",
+      main: "#10213a",
+      tint: "#263a56",
+      card: "#0d1c32",
+      light: "#1a3150",
       text: {
         heading: "#ffffff",
         subheading: "#A4AEBB",
         body: "#D1D6DD",
-        underline: "#2f4a6f",
+        underline: "#223c62",
       },
       highlight: "#a8dadc",
     },

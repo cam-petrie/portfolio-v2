@@ -3,12 +3,74 @@
     "id": 6,
     "link": "https://www.cognitivetalentsolutions.com/",
     "timing": 0,
-    "heading": "AI Based Data Cleaning",
-    "desc": "Leverages AI to automate the process of data cleaning, eliminating manual intervention and ensuring more efficient and accurate results. The automation streamlines data preparation, making it faster and more reliable for subsequent analyses.",
-    "stack": ["Fastify API", "TypeScript", "Langchain", "PostgreSQL", "OpenAI API"],
+    "heading": "Enterprise People Analytics Platform Backend",
+    "desc": "Built and maintained backend systems for a multi-tenant people analytics platform, including survey creation, participant management, response processing, email delivery, AI-powered insights, audit logging, and organization-scoped data access. Integrated PostgreSQL, Redis queues, Neo4j graph analysis, Mailgun, OpenAI/LangChain, and external HRIS data sources.",
+    "stack": [
+      "Bun",
+      "Fastify",
+      "TypeScript",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Redis",
+      "Neo4j",
+      "OpenAI API",
+      "LangChain",
+      "Mailgun"
+    ],
     "src": "cts"
   },
-
+  {
+    "id": 8,
+    "link": "https://www.cognitivetalentsolutions.com/",
+    "timing": 1,
+    "heading": "Survey Automation and Response Processing API",
+    "desc": "Developed backend workflows for creating, publishing, testing, and tracking organizational surveys. Implemented participant upload flows, localized survey delivery, test survey handling, QR/link generation support, response validation, completion metrics, and reliable email delivery through Mailgun.",
+    "stack": [
+      "Fastify",
+      "TypeScript",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Mailgun",
+      "JWT",
+      "i18n"
+    ],
+    "src": "cts"
+  },
+  {
+    "id": 9,
+    "link": "https://www.cognitivetalentsolutions.com/",
+    "timing": 2,
+    "heading": "Passive ONA Data Pipeline",
+    "desc": "Built backend data processing pipelines for passive organizational network analysis, including Microsoft Graph/Entra ID ingestion, Redis-backed jobs, audit-safe processing, graph enrichment, and Neo4j-powered network analysis for collaboration and influence insights.",
+    "stack": [
+      "TypeScript",
+      "Fastify",
+      "Redis",
+      "Bull",
+      "PostgreSQL",
+      "Neo4j",
+      "Microsoft Graph API",
+      "ETL"
+    ],
+    "src": "cts"
+  },
+  {
+    "id": 10,
+    "link": "https://www.cognitivetalentsolutions.com/",
+    "timing": 3,
+    "heading": "AI Insights and Cogni Assistant Backend",
+    "desc": "Implemented AI-assisted analytics features using OpenAI and LangChain to generate survey/report insights, translate survey content, and support Cogni chatbot workflows over organizational network data while preserving structured backend validation and tenant-scoped access.",
+    "stack": [
+      "OpenAI API",
+      "LangChain",
+      "Fastify",
+      "TypeScript",
+      "PostgreSQL",
+      "Prompt Engineering",
+      "Data Analysis"
+    ],
+    "src": "cts"
+  },
   {
     "id": 5,
     "link": "https://github.com/Peach97/blockchain-creator",
@@ -35,18 +97,9 @@
     "src": "db"
   },
   {
-    "id": 2,
-    "link": "https://github.com/Peach97/TakeoverPods",
-    "timing": 3,
-    "heading": "User Authentication For Blog",
-    "desc": "Leveraged Firebase's authentication services to seamlessly manage user sign-up, login, and password recovery process. Integrated Firebase's Authentication SDK into React application ensuring smooth onboarding and sign-in procedure.",
-    "stack": ["Node", "Firebase", "Authorization", "APIs"],
-    "src": "authentication"
-  },
-  {
     "id": 1,
     "link": false,
-    "timing": 4,
+    "timing": 3,
     "heading": "MongoDB Post Storage System/REST API",
     "desc": "Blog post storage system using MERN stack. Offers a robust and scalable solution for managing and organizing blog content. Employed Mongoose (object modeling tool for MongoDB) to simplify data schema definition and facilitate interactions with the database.",
     "stack": [
