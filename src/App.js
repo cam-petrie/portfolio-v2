@@ -274,7 +274,7 @@ const lightTheme = createTheme({
 // Keep the exported theme object stable for modules that import it directly.
 export const theme = createTheme(darkTheme);
 export const ColorModeContext = React.createContext({
-  mode: "dark",
+  mode: "light",
   toggleColorMode: () => {},
   setProjectCardHovering: () => {},
 });
@@ -332,7 +332,7 @@ export const ColorModeContext = React.createContext({
 // });
 
 function App() {
-  const [mode, setMode] = React.useState("dark");
+  const [mode, setMode] = React.useState("light");
   const [isProjectCardHovering, setProjectCardHovering] = React.useState(false);
   const activeTheme = mode === "dark" ? darkTheme : lightTheme;
   const colorMode = React.useMemo(
