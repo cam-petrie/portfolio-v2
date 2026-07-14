@@ -14,7 +14,7 @@ let imageSize = "2rem";
 
 const saveFile = () => {
   FileSaver.saveAs(
-    "/resources/Cameron Petrie_Resume.pdf",
+    "/resources/Cameron Petrie_Software_Resume.pdf",
     "Cameron Petrie Resume.pdf"
   );
 };
