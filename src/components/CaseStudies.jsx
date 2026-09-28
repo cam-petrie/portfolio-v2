@@ -5,6 +5,31 @@ import Media from "./Media.jsx";
 const RISE_MS = 380;
 const GROW_MS = 420;
 
+function AwardRibbon() {
+  const ribbonRef = useRef(null);
+  const [wrapped, setWrapped] = useState(false);
+
+  useEffect(() => {
+    const io = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setWrapped(true);
+      io.disconnect();
+    }, { threshold: 0.6 });
+    io.observe(ribbonRef.current);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div ref={ribbonRef} className={"award-flag" + (wrapped ? " is-wrapped" : "")}>
+      <div className="award-flag__band">
+        <span className="award-flag__icon"><img src="/images/award-icon.png" alt="" /></span>
+        <span className="award-flag__tag">2025 Winner</span>
+        <span>HR Tech Awards — Best Innovative Talent Analytics, for Cognitive Talent Analyzer™</span>
+      </div>
+    </div>
+  );
+}
+
 function CaseCard({ c, index, metrics, disciplines }) {
   const [phase, setPhase] = useState("closed");
   const stageRef = useRef(null);
@@ -58,13 +83,7 @@ function CaseCard({ c, index, metrics, disciplines }) {
 
   return (
     <article className={"card case" + (flagship ? " case--flagship" : "")}>
-      {c.award && (
-        <div className="award-flag">
-          <span className="award-flag__icon"><img src="/images/award-icon.png" alt="" /></span>
-          <span className="award-flag__tag">2025 Winner</span>
-          <span>HR Tech Awards — Best Innovative Talent Analytics, for Cognitive Talent Analyzer™</span>
-        </div>
-      )}
+      {c.award && <AwardRibbon />}
       <div className="case__body">
         <div className="case__text">
           <div className="eyebrow">

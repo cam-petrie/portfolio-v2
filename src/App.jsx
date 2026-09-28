@@ -8,6 +8,8 @@ import NetworkExplorer from "./components/NetworkExplorer.jsx";
 import MoreWork from "./components/MoreWork.jsx";
 import Blender from "./components/Blender.jsx";
 import Contact from "./components/Contact.jsx";
+import PaintTrail from "./components/PaintTrail.jsx";
+import CustomCursor from "./components/CustomCursor.jsx";
 
 const LAPTOP_COLORS = {
   dark: { body: "#d2d4d0", keys: "#1d3557", glow: "#D4FF3A", screen: "/images/me-dark.png" },
@@ -22,6 +24,8 @@ export default function App() {
 
   return (
     <>
+      <PaintTrail />
+      <CustomCursor />
       <a className="skip" href="#work">Skip to case studies</a>
       <Header theme={theme} onToggleTheme={toggleTheme} resume={content.resume} />
       <main id="top" className="wrap">
