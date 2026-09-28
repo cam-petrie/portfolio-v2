@@ -4,6 +4,7 @@ import { useTheme } from "./hooks.js";
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import CaseStudies from "./components/CaseStudies.jsx";
+import NetworkExplorer from "./components/NetworkExplorer.jsx";
 import MoreWork from "./components/MoreWork.jsx";
 import Blender from "./components/Blender.jsx";
 import Contact from "./components/Contact.jsx";
@@ -30,6 +31,7 @@ export default function App() {
           onLaptopReady={(api) => { laptop.current = api; }}
         />
         <CaseStudies cases={content.cases} metrics={content.metrics} disciplines={content.disciplines} />
+        <NetworkExplorer />
         <MoreWork items={content.other} disciplines={content.disciplines} />
         <Blender />
         <Contact content={content} />

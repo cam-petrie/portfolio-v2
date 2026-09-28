@@ -1,10 +1,61 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Media from "./Media.jsx";
 
+// Must match the .case__panel / .case__stage transition durations in styles.css.
+const RISE_MS = 380;
+const GROW_MS = 420;
+
 function CaseCard({ c, index, metrics, disciplines }) {
-  const [open, setOpen] = useState(false);
+  const [phase, setPhase] = useState("closed");
+  const stageRef = useRef(null);
+  const innerRef = useRef(null);
+  const closedHeight = useRef(0);
+  const timer = useRef(0);
   const flagship = index === 0;
   const id = "case-" + c.slug;
+  const open = phase === "rising" || phase === "open";
+
+  const later = (fn, ms) => {
+    clearTimeout(timer.current);
+    timer.current = setTimeout(fn, ms);
+  };
+  const expandedHeight = () => Math.max(closedHeight.current, innerRef.current.offsetHeight);
+
+  useEffect(() => () => clearTimeout(timer.current), []);
+
+  useEffect(() => {
+    if (phase !== "open") return;
+    const ro = new ResizeObserver(() => { stageRef.current.style.height = expandedHeight() + "px"; });
+    ro.observe(innerRef.current);
+    return () => ro.disconnect();
+  }, [phase]);
+
+  const handleOpen = () => {
+    const stage = stageRef.current;
+    if (phase === "closed") closedHeight.current = stage.offsetHeight;
+    stage.style.height = stage.offsetHeight + "px";
+    setPhase("rising");
+    later(() => {
+      stage.style.height = expandedHeight() + "px";
+      setPhase("open");
+    }, RISE_MS);
+  };
+
+  const handleClose = () => {
+    const stage = stageRef.current;
+    stage.style.height = closedHeight.current + "px";
+    setPhase("collapsing");
+    later(() => {
+      setPhase("falling");
+      later(() => {
+        stage.style.height = "";
+        setPhase("closed");
+      }, RISE_MS);
+    }, GROW_MS);
+  };
+
+  const handleToggle = () => (open ? handleClose() : handleOpen());
+
   return (
     <article className={"card case" + (flagship ? " case--flagship" : "")}>
       {c.award && (
@@ -25,27 +76,37 @@ function CaseCard({ c, index, metrics, disciplines }) {
           <ul className="chips">
             {c.stack.slice(0, flagship ? 8 : 5).map((s) => <li key={s}>{s}</li>)}
           </ul>
-          <button className="btn btn--outline btn--sm" aria-expanded={open} aria-controls={id} onClick={() => setOpen(!open)}>
+          <button className="btn btn--outline btn--sm" aria-expanded={open} aria-controls={id} onClick={handleToggle}>
             {open ? "Close case study" : "Read case study"} <span aria-hidden="true">{open ? "−" : "+"}</span>
           </button>
         </div>
-        <Media className="case__media" src={c.img} alt={c.title} />
+        <div className="case__stage" ref={stageRef}>
+          <Media className="case__media" src={c.img} alt={c.title} />
+          <div className="case__panel" data-phase={phase} id={id} aria-hidden={!open} inert={open ? undefined : ""}>
+            <div className="case__panel-inner" ref={innerRef}>
+              <div className="case__panel-head">
+                <span className="eyebrow"><span className="accent-text">Case study</span></span>
+                <button type="button" className="icon-btn" aria-label="Close case study" onClick={handleClose}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square"><path d="M5 5l14 14M19 5L5 19" /></svg>
+                </button>
+              </div>
+              <dl className="spec">
+                <dt>Context</dt><dd>{c.context}</dd>
+                <dt>My role</dt><dd>{c.role}</dd>
+                <dt>What I built</dt>
+                <dd><ul className="dash">{c.built.map((b) => <li key={b}>{b}</li>)}</ul></dd>
+                <dt className="accent-text">Outcome</dt><dd className="strong">{c.outcome}</dd>
+                <dt>Stack</dt><dd>{c.stack.join(" · ")}</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
       </div>
       {c.stats && (
         <dl className="stats">
           {metrics.map((m) => (
             <div key={m.l}><dt>{m.l}</dt><dd>{m.n}</dd></div>
           ))}
-        </dl>
-      )}
-      {open && (
-        <dl className="spec" id={id}>
-          <dt>Context</dt><dd>{c.context}</dd>
-          <dt>My role</dt><dd>{c.role}</dd>
-          <dt>What I built</dt>
-          <dd><ul className="dash">{c.built.map((b) => <li key={b}>{b}</li>)}</ul></dd>
-          <dt className="accent-text">Outcome</dt><dd className="strong">{c.outcome}</dd>
-          <dt>Stack</dt><dd>{c.stack.join(" · ")}</dd>
         </dl>
       )}
     </article>

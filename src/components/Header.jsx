@@ -9,6 +9,7 @@ export default function Header({ theme, onToggleTheme, resume }) {
         </a>
         <nav className="header__nav" aria-label="Sections">
           <a href="#work">Work</a>
+          <a href="#network">Network</a>
           <a href="#blender">3D</a>
           <a href="#contact">Contact</a>
         </nav>

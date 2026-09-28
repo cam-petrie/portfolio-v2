@@ -8,7 +8,7 @@ export default function Hero({ content, laptopOptions, onLaptopReady }) {
   const linkAt = content.sub.lastIndexOf("CTS.");
 
   return (
-    <>
+    <div className="hero-layout">
       <section className="hero">
         <a href="#work" className="award-pill">
           <span className="award-pill__tag">★ 2025 Winner</span>
@@ -38,6 +38,6 @@ export default function Hero({ content, laptopOptions, onLaptopReady }) {
         label="3D laptop modeled in Blender. Click to open or close the screen."
         caption="Fig. 1 — Laptop, modeled in Blender · click to open"
       />
-    </>
+    </div>
   );
 }
