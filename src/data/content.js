@@ -26,11 +26,12 @@ export const content = {
       tags: ["back", "front", "ai"],
       img: "/images/cts.png", imgFit: "cover",
       context: "Enterprise people-analytics platform for survey creation, response tracking, ActiveONA network analysis, participant management, report generation, and AI-assisted insights.",
-      role: "Full-stack engineer — frontend platform in React/TypeScript and backend services in Bun/Fastify.",
+      role: "Full-stack lead (now CTO) — end-to-end ownership from survey and graph data pipelines to causal analytics and generative-AI experiences in the browser.",
       built: [
-        "Backend services for survey management, participant workflows, analytics processing, and secure organization-level data access",
-        "Complex dashboards, dark mode theming, localized survey workflows, resizable panels, and interactive filters",
-        "Graph visualizations and chatbot-driven data exploration"
+        "Scalable ONA + survey backend (Fastify, Drizzle, Postgres, Neo4j, async email campaigns) with secure multi-tenant access",
+        "Network graphs, results dashboards, PDF reporting, and E2E-tested release quality",
+        "Cogni generative assistant and structured LLM tooling for onboarding and insights",
+        "Causal AI dashboards (LiNGAM), retention playbooks, and enterprise ServiceNow integration paths"
       ],
       outcome: "Survey campaigns at five-language scale. Platform named 2025 HR Tech Award winner — Best Innovative Talent Analytics.",
       stack: ["React", "TypeScript", "Zustand", "React Query", "Bun", "Fastify", "PostgreSQL", "Drizzle ORM", "Redis", "Neo4j", "i18next", "OpenAI API"]
