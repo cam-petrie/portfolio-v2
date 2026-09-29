@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { content } from "./data/content.js";
 import { useSmoothScroll, useTheme } from "./hooks.js";
 import Header from "./components/Header.jsx";
@@ -10,6 +10,7 @@ import Blender from "./components/Blender.jsx";
 import Contact from "./components/Contact.jsx";
 import PaintTrail from "./components/PaintTrail.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
+import AimTrainer from "./components/AimTrainer.jsx";
 
 const LAPTOP_COLORS = {
   dark: { body: "#d2d4d0", keys: "#0e0e0e", screen: "/images/me-light-shirt.png" },
@@ -19,7 +20,11 @@ const LAPTOP_COLORS = {
 export default function App() {
   const [theme, toggleTheme] = useTheme();
   const laptop = useRef(null);
+  const [gameOpen, setGameOpen] = useState(false);
   useSmoothScroll();
+
+  const toggleGame = useCallback(() => setGameOpen((open) => !open), []);
+  const closeGame = useCallback(() => setGameOpen(false), []);
 
   useEffect(() => { laptop.current?.setColors(LAPTOP_COLORS[theme]); }, [theme]);
 
@@ -28,7 +33,8 @@ export default function App() {
       <PaintTrail />
       <CustomCursor />
       <a className="skip" href="#work">Skip to case studies</a>
-      <Header theme={theme} onToggleTheme={toggleTheme} resume={content.resume} />
+      <Header theme={theme} onToggleTheme={toggleTheme} resume={content.resume} gameOpen={gameOpen} onToggleGame={toggleGame} />
+      {gameOpen && <AimTrainer onExit={closeGame} />}
       <main id="top" className="wrap">
         <Hero
           content={content}

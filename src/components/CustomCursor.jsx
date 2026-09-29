@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 const FRAME_SIZE = 34;
 const FRAME_EASE = 0.16;
 const LOCK_EASE = 0.24;
+const GAME_EASE = 0.45;
 const LOCK_PADDING = 6;
 const LOCK_TARGETS =
   'a[href], button:not(:disabled), [role="button"], summary, select, label[for], input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"], [data-cursor-target]';
@@ -48,7 +49,7 @@ export default function CustomCursor() {
       raf = 0;
       if (!pointer) return;
       const goal = targetBox();
-      const ease = reduceMotion ? 1 : target ? LOCK_EASE : FRAME_EASE;
+      const ease = reduceMotion ? 1 : target ? LOCK_EASE : root.classList.contains("game-open") ? GAME_EASE : FRAME_EASE;
       box = box ?? { ...goal };
       box.x += (goal.x - box.x) * ease;
       box.y += (goal.y - box.y) * ease;
