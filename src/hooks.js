@@ -1,4 +1,30 @@
 import { useEffect, useState } from "react";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
+
+// Eased wheel/trackpad scrolling. Mouse clicks on in-page links glide too;
+// keyboard activation (detail === 0) keeps the native jump so focus moves with it.
+export function useSmoothScroll() {
+  useEffect(() => {
+    const lenis = new Lenis({ autoRaf: true, lerp: 0.1 });
+
+    const handleAnchorClick = (e) => {
+      if (e.detail === 0 || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      const link = e.target.closest?.('a[href^="#"]');
+      const target = link && link.hash.length > 1 && document.querySelector(link.hash);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(link.hash === "#top" ? 0 : target);
+      history.pushState(null, "", link.hash);
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+    return () => {
+      document.removeEventListener("click", handleAnchorClick);
+      lenis.destroy();
+    };
+  }, []);
+}
 
 export function useTheme() {
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || "dark");

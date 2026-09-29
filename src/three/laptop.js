@@ -7,7 +7,27 @@ const OPEN = 0;
 const DURATION = 0.9;
 const HINGE = [0, 0.01, 0.04];
 
-export function mountLaptop(container, { bodyColor = "#dceaff", keysColor = "#1d3557", glowColor = "#a8dadc", screenImage = "/images/me9.jpg" } = {}) {
+const SAMPLE_SIZE = 32;
+
+// Average color of an image, brightened so its strongest channel is full intensity.
+const glowColorFrom = (image) => {
+  const canvas = document.createElement("canvas");
+  canvas.width = canvas.height = SAMPLE_SIZE;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(image, 0, 0, SAMPLE_SIZE, SAMPLE_SIZE);
+  const data = ctx.getImageData(0, 0, SAMPLE_SIZE, SAMPLE_SIZE).data;
+  let r = 0, g = 0, b = 0;
+  for (let i = 0; i < data.length; i += 4) {
+    const alpha = data[i + 3] / 255;
+    r += data[i] * alpha;
+    g += data[i + 1] * alpha;
+    b += data[i + 2] * alpha;
+  }
+  const brightest = Math.max(r, g, b) || 1;
+  return [r / brightest, g / brightest, b / brightest];
+};
+
+export function mountLaptop(container, { bodyColor = "#dceaff", keysColor = "#1d3557", screenImage = "/images/me9.jpg" } = {}) {
   const stage = createStage(container);
   const { THREE, scene, root, renderer } = stage;
 
@@ -36,13 +56,21 @@ export function mountLaptop(container, { bodyColor = "#dceaff", keysColor = "#1d
   let glow = null;
   let screen = null;
   let screenMat = null;
+  let currentScreen = screenImage;
   let t0 = null, from = CLOSED, to = OPEN, isOpen = false;
 
   const textureLoader = new THREE.TextureLoader();
   const screenTextures = new Map();
+  const syncGlow = () => {
+    const color = screenTextures.get(currentScreen)?.userData.glowColor;
+    if (glow && color) glow.color.setRGB(...color, THREE.SRGBColorSpace);
+  };
   const getScreenTexture = (url) => {
     if (screenTextures.has(url)) return screenTextures.get(url);
-    const tex = textureLoader.load(url);
+    const tex = textureLoader.load(url, (loaded) => {
+      loaded.userData.glowColor = glowColorFrom(loaded.image);
+      syncGlow();
+    });
     tex.flipY = false;
     tex.generateMipmaps = false;
     tex.colorSpace = THREE.SRGBColorSpace;
@@ -74,9 +102,10 @@ export function mountLaptop(container, { bodyColor = "#dceaff", keysColor = "#1d
       screen.position.y += HINGE[1];
       screen.position.z += HINGE[2];
       screen.rotation.x = CLOSED;
-      glow = new THREE.PointLight(glowColor, 6, 6.5, 1.25);
+      glow = new THREE.PointLight(0xffffff, 6, 6.5, 1.25);
       glow.position.set(0, 24, 0.25);
       screen.add(glow);
+      syncGlow();
     }
     group.add(model);
   });
@@ -101,11 +130,15 @@ export function mountLaptop(container, { bodyColor = "#dceaff", keysColor = "#1d
   });
 
   return {
-    setColors({ body, keys, glow: g, screen: screenUrl }) {
+    setColors({ body, keys, screen: screenUrl }) {
       if (body) bodyMats.forEach((m) => m.color.set(body));
       if (keys) keyMats.forEach((m) => m.color.set(keys));
-      if (g && glow) glow.color.set(g);
-      if (screenUrl && screenMat) screenMat.map = getScreenTexture(screenUrl);
+      if (screenUrl) {
+        currentScreen = screenUrl;
+        const tex = getScreenTexture(screenUrl);
+        if (screenMat) screenMat.map = tex;
+        syncGlow();
+      }
     },
     dispose() {
       renderer.domElement.removeEventListener("click", onClick);

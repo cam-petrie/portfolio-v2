@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { content } from "./data/content.js";
-import { useTheme } from "./hooks.js";
+import { useSmoothScroll, useTheme } from "./hooks.js";
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import CaseStudies from "./components/CaseStudies.jsx";
@@ -12,13 +12,14 @@ import PaintTrail from "./components/PaintTrail.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
 
 const LAPTOP_COLORS = {
-  dark: { body: "#d2d4d0", keys: "#1d3557", glow: "#D4FF3A", screen: "/images/me-dark.png" },
-  light: { body: "#e6e3dc", keys: "#1d3557", glow: "#a8dadc", screen: "/images/me-light.png" },
+  dark: { body: "#d2d4d0", keys: "#0e0e0e", screen: "/images/me-light-shirt.png" },
+  light: { body: "#e6e3dc", keys: "#0e0e0e", screen: "/images/me-dark-shirt.png" },
 };
 
 export default function App() {
   const [theme, toggleTheme] = useTheme();
   const laptop = useRef(null);
+  useSmoothScroll();
 
   useEffect(() => { laptop.current?.setColors(LAPTOP_COLORS[theme]); }, [theme]);
 
@@ -31,7 +32,7 @@ export default function App() {
       <main id="top" className="wrap">
         <Hero
           content={content}
-          laptopOptions={{ bodyColor: LAPTOP_COLORS[theme].body, keysColor: LAPTOP_COLORS[theme].keys, glowColor: LAPTOP_COLORS[theme].glow, screenImage: LAPTOP_COLORS[theme].screen }}
+          laptopOptions={{ bodyColor: LAPTOP_COLORS[theme].body, keysColor: LAPTOP_COLORS[theme].keys, screenImage: LAPTOP_COLORS[theme].screen }}
           onLaptopReady={(api) => { laptop.current = api; }}
         />
         <CaseStudies cases={content.cases} metrics={content.metrics} disciplines={content.disciplines} />
