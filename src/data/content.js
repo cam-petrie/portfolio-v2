@@ -1,7 +1,7 @@
 // Site content. Edit copy, stats, and projects here.
 export const content = {
   name: "Cameron Petrie",
-  sub: "Currently pursuing a Master's degree in Computer Science from the University of Colorado Boulder. Building some cool things with the team over at CTS.",
+  sub: "Software Engineer. Building some cool things with the team over at CTS.",
   ctsLink: "https://www.cognitivetalentsolutions.com/",
   resume: "/resources/Cameron Petrie_Software_Resume.pdf",
   linkedin: "https://www.linkedin.com/in/cameron-petrie-4b00aa148/",
