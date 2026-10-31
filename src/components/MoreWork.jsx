@@ -1,10 +1,10 @@
 import Media from "./Media.jsx";
 
-export default function MoreWork({ items, disciplines }) {
+export default function MoreWork({ items, disciplines, title = "More work" }) {
   return (
     <section className="section">
       <div className="section__head">
-        <h2 className="section__title">More work</h2>
+        <h2 className="section__title">{title}</h2>
         <span className="muted small">{items.length} projects</span>
       </div>
       <div className="work-grid dim-group">

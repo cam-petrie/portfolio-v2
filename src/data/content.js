@@ -10,7 +10,8 @@ export const content = {
     back:  { label: "Backend",   color: "#1E2761" },
     front: { label: "Frontend",  color: "#9ED6CC" },
     ai:    { label: "AI & Data", color: "#B79CE8" },
-    web3:  { label: "Web3",      color: "#F4B58A" }
+    web3:  { label: "Web3",      color: "#F4B58A" },
+    vibes: { label: "Vibes",     color: "#9ED6CC" }
   },
   metrics: [
     { n: "390K+", l: "nodes analyzed" },
@@ -67,6 +68,18 @@ export const content = {
       ],
       outcome: "Collaboration data becomes a navigable network that the assistant can query and filter in place.",
       stack: ["React Force Graph", "D3", "Zustand", "Ant Design", "Fastify", "Redis", "Bull", "Neo4j", "Microsoft Graph API"]
+    }
+  ],
+  vibes: [
+    {
+      title: "hive.", tag: "vibes", img: "/images/hive.png", link: "https://hive-one-lac.vercel.app/",
+      desc: "A personal food journal for tracking experiences, exploring possible triggers, and comparing ingredients and alternatives. Available on the web, with an iOS app in production.",
+      stack: ["Next.js", "TypeScript", "Supabase", "Capacitor", "iOS"]
+    },
+    {
+      title: "Rolecraft", tag: "vibes", img: "/images/rolecraft.png", link: "https://cam-petrie.github.io/rolecraft/",
+      desc: "An AI-assisted resume and interview workspace: review role fit, refine your resume with suggestions you approve, save versions, and prepare for interviews.",
+      stack: ["React", "OpenAI API", "Cloudflare Workers", "DOCX", "PDF.js"]
     }
   ],
   other: [
