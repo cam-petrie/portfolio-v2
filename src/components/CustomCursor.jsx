@@ -48,6 +48,11 @@ export default function CustomCursor() {
     const render = () => {
       raf = 0;
       if (!pointer) return;
+      // The cursor overlay lives outside the card, so copy the surface's cursor color.
+      const surface = document.elementFromPoint(pointer.x, pointer.y) ?? root;
+      const color = getComputedStyle(surface).getPropertyValue("--cursor");
+      dot.style.setProperty("--cursor", color);
+      frame.style.setProperty("--cursor", color);
       const goal = targetBox();
       const ease = reduceMotion ? 1 : target ? LOCK_EASE : root.classList.contains("game-open") ? GAME_EASE : FRAME_EASE;
       box = box ?? { ...goal };

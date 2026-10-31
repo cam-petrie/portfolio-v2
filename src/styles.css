@@ -314,7 +314,8 @@ button, input, textarea { font: inherit; color: inherit; }
 .ledger li { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--hair); }
 
 /* Contact */
-.contact { margin-top: clamp(72px, 10vw, 120px); scroll-margin-top: 70px; background: var(--ink); color: var(--bg); padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(28px, 4vw, 56px); }
+.contact { --cursor: var(--bg); margin-top: clamp(72px, 10vw, 120px); scroll-margin-top: 70px; background: var(--ink); color: var(--bg); padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(28px, 4vw, 56px); }
+.contact .btn--accent { --cursor: var(--on-accent); }
 .contact__intro { display: flex; flex-direction: column; gap: 24px; justify-content: space-between; }
 .contact__title { margin: 0; font-size: clamp(64px, 9vw, 120px); line-height: 0.86; font-weight: 800; font-stretch: 125%; letter-spacing: -0.045em; text-transform: uppercase; }
 .contact__lede { margin: 0; font-size: 17px; line-height: 1.55; max-width: 26em; opacity: 0.8; }
@@ -324,7 +325,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .contact__links a:hover { color: var(--accent-on-ink); }
 .contact__form { display: flex; flex-direction: column; gap: 14px; }
 .contact__form label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
-.contact__form input, .contact__form textarea { padding: 12px 14px; border: none; border-bottom: 2px solid var(--bg); background: transparent; color: var(--bg); font-size: 17px; font-weight: 500; letter-spacing: 0; text-transform: none; line-height: 1.5; outline: none; resize: vertical; }
+.contact__form input, .contact__form textarea { padding: 12px 14px; border: none; border-bottom: 2px solid var(--bg); background: transparent; color: var(--bg); caret-color: var(--bg); font-size: 17px; font-weight: 500; letter-spacing: 0; text-transform: none; line-height: 1.5; outline: none; resize: vertical; }
 .contact__form input { height: 48px; }
 .contact__form input:focus, .contact__form textarea:focus { border-bottom-color: var(--accent-on-ink); }
 .contact__form .btn { margin-top: 8px; align-self: flex-start; }
