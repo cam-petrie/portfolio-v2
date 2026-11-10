@@ -1,8 +1,8 @@
 import Media from "./Media.jsx";
 
-export default function MoreWork({ items, disciplines, title = "More work" }) {
+export default function MoreWork({ items, disciplines, title = "More work", id }) {
   return (
-    <section className="section">
+    <section id={id} className="section">
       <div className="section__head">
         <h2 className="section__title">{title}</h2>
         <span className="muted small">{items.length} projects</span>

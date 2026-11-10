@@ -9,6 +9,7 @@ export const content = {
   disciplines: {
     back:  { label: "Backend",   color: "#1E2761" },
     front: { label: "Frontend",  color: "#9ED6CC" },
+    full:  { label: "Full-stack", color: "#9ED6CC" },
     ai:    { label: "AI & Data", color: "#B79CE8" },
     web3:  { label: "Web3",      color: "#F4B58A" },
     vibes: { label: "Vibes",     color: "#9ED6CC" }
@@ -83,6 +84,11 @@ export const content = {
     }
   ],
   other: [
+    {
+      title: "Network First Platform", tag: "full", img: "/images/network-first.png", link: "https://network.cognitivetalentsolutions.com/",
+      desc: "A collaboration platform that turns shared interests into community-backed projects, with interactive network maps, proposal voting, project workspaces, and member discovery.",
+      stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Kubernetes"]
+    },
     { title: "Survey Creation and Management UI", tag: "front", img: "/images/survey.jpg", link: false, desc: "Self-service survey creation with multi-step modals, participant uploads, test delivery, QR/link previews, and localized templates.", stack: ["React", "TypeScript", "Ant Design", "i18next"] },
     { title: "Survey Automation & Response Processing API", tag: "back", img: "/images/survey.jpg", link: false, desc: "Backend workflows for creating, distributing, and tracking organizational surveys.", stack: ["Fastify", "PostgreSQL", "Drizzle ORM", "Mailgun", "JWT"] },
     { title: "DAO Web3 Platform", tag: "web3", img: "/images/dao.jpg", link: false, desc: "Next.js landing page and DAO interface for the Network-First Manifesto — embedded wallet onboarding, governance UI, proposal workflows on Base.", stack: ["Next.js", "Privy SDK", "Base Network", "Framer Motion"] },

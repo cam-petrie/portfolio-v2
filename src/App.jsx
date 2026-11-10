@@ -43,7 +43,7 @@ export default function App() {
         />
         <CaseStudies cases={content.cases} metrics={content.metrics} disciplines={content.disciplines} />
         <NetworkExplorer />
-        <MoreWork items={content.other} disciplines={content.disciplines} />
+        <MoreWork id="more-work" items={content.other} disciplines={content.disciplines} />
         <MoreWork title="Vibes" items={content.vibes} disciplines={content.disciplines} />
         <Blender />
         <Contact content={content} />
