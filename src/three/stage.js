@@ -33,6 +33,8 @@ export function createStage(container, { fitWidth = 600 } = {}) {
     const w = container.clientWidth || 1;
     const h = container.clientHeight || 1;
     renderer.setSize(w, h, false);
+    // Let individual viewports adjust framing through responsive CSS.
+    camera.zoom = Number.parseFloat(getComputedStyle(container).getPropertyValue("--stage-zoom")) || 40;
     camera.left = -w / 2; camera.right = w / 2; camera.top = h / 2; camera.bottom = -h / 2;
     camera.updateProjectionMatrix();
     root.scale.setScalar(w > fitWidth ? 1 : w / fitWidth);
