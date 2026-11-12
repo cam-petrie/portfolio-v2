@@ -116,6 +116,7 @@ function CaseCard({ c, index, metrics, disciplines }) {
                 <dd><ul className="dash">{c.built.map((b) => <li key={b}>{b}</li>)}</ul></dd>
                 <dt className="accent-text">Outcome</dt><dd className="strong">{c.outcome}</dd>
                 <dt>Stack</dt><dd>{c.stack.join(" · ")}</dd>
+                {c.link && <><dt>Project</dt><dd><a className="accent-text" href={c.link} target="_blank" rel="noreferrer">Visit live platform ↗</a></dd></>}
               </dl>
             </div>
           </div>

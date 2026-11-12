@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#101719"/>
+  <path d="M0 72h640M0 288h640" stroke="#27373b"/>
+  <g fill="none" stroke="#547270" stroke-width="2">
+    <path d="M114 122h55l49 58h45M114 180h149M114 238h55l49-58M377 180h43l49-58h57M420 180h106M420 180l49 58h57"/>
+  </g>
+  <g fill="#9ed6cc"><circle cx="114" cy="122" r="6"/><circle cx="114" cy="180" r="6"/><circle cx="114" cy="238" r="6"/><circle cx="218" cy="180" r="5"/><circle cx="420" cy="180" r="5"/><circle cx="526" cy="122" r="6"/><circle cx="526" cy="180" r="6"/><circle cx="526" cy="238" r="6"/></g>
+  <rect x="263" y="137" width="114" height="86" rx="12" fill="#213236" stroke="#638b86"/>
+  <path d="M280 181h15l9-17 13 35 11-29 7 11h24" fill="none" stroke="#b0f5db" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#a7bfbe" text-anchor="middle" font-family="monospace" font-size="13" letter-spacing="2">
+    <text x="114" y="270">INGEST</text><text x="320" y="270">PROCESS</text><text x="526" y="270">DELIVER</text>
+  </g>
+  <text x="320" y="49" fill="#e3efee" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="700" letter-spacing="3">TELEMETRY PIPELINE</text>
+</svg>

@@ -69,6 +69,24 @@ export const content = {
       ],
       outcome: "Collaboration data becomes a navigable network that the assistant can query and filter in place.",
       stack: ["React Force Graph", "D3", "Zustand", "Ant Design", "Fastify", "Redis", "Bull", "Neo4j", "Microsoft Graph API"]
+    },
+    {
+      code: "CS-04", slug: "network-first",
+      title: "Network First Platform",
+      summary: "Built a collaboration platform where members discover shared interests, vote on proposals, and turn supported ideas into projects they can join.",
+      tags: ["full"],
+      img: "/images/network-first.png", imgFit: "contain",
+      link: "https://network.cognitivetalentsolutions.com/",
+      context: "A community needed a way to see who was working on what, find shared interests, and turn ideas into projects with a clear path from proposal to participation.",
+      role: "Full-stack development across the network explorer, proposal and project workflows, and production rollout.",
+      built: [
+        "An interactive map of people and projects built from visible memberships. A deterministic layout keeps the graph stable while members drag nodes.",
+        "A workflow from private proposal drafts to ratification and project formation. A database constraint prevents duplicate votes, and project creation is safe to retry.",
+        "Member-only workspaces with join approvals, project chat and discussion threads, and controls for project leads to manage membership and hand over responsibility.",
+        "A Kubernetes deployment backed by PostgreSQL and a separate identity service, with SQLite retained for local development. Governance tests cover both storage paths."
+      ],
+      outcome: "Shipped a hosted workspace that brings discovery, proposal voting, and project collaboration together. Production checks confirmed PostgreSQL readiness and the new controls for project leads.",
+      stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "SQLite", "Docker", "Kubernetes"]
     }
   ],
   vibes: [
@@ -90,13 +108,8 @@ export const content = {
       desc: "An embeddable chat component with discussion rooms, threaded replies, per-room drafts, and moderation controls. Includes a runnable reference backend.",
       stack: ["React", "TypeScript", "Node.js", "Vite"]
     },
-    {
-      title: "Network First Platform", tag: "full", img: "/images/network-first.png", link: "https://network.cognitivetalentsolutions.com/",
-      desc: "A collaboration platform that turns shared interests into community-backed projects, with interactive network maps, proposal voting, project workspaces, and member discovery.",
-      stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Kubernetes"]
-    },
     { title: "Survey Creation and Management UI", tag: "front", img: "/images/survey.jpg", link: false, desc: "Self-service survey creation with multi-step modals, participant uploads, test delivery, QR/link previews, and localized templates.", stack: ["React", "TypeScript", "Ant Design", "i18next"] },
-    { title: "Survey Automation & Response Processing API", tag: "back", img: "/images/survey.jpg", link: false, desc: "Backend workflows for creating, distributing, and tracking organizational surveys.", stack: ["Fastify", "PostgreSQL", "Drizzle ORM", "Mailgun", "JWT"] },
+    { title: "Survey Automation & Response Processing API", tag: "back", img: "/images/telemetry-pipeline.svg", link: false, desc: "Backend workflows for creating, distributing, and tracking organizational surveys.", stack: ["Fastify", "PostgreSQL", "Drizzle ORM", "Mailgun", "JWT"] },
     { title: "DAO Web3 Platform", tag: "web3", img: "/images/dao.jpg", link: false, desc: "Next.js landing page and DAO interface for the Network-First Manifesto — embedded wallet onboarding, governance UI, proposal workflows on Base.", stack: ["Next.js", "Privy SDK", "Base Network", "Framer Motion"] },
     { title: "Publication Source Lineage Provider", tag: "ai", img: "/images/neo4j_example.png", link: false, desc: "Citation lineage tracking with a web scraper, sentiment analysis, and text classification.", stack: ["Python", "Neo4j", "Prometheus", "Grafana"] },
     { title: "Predictive Modeling for Soccer Season Outcomes", tag: "ai", img: "/images/premier_league.png", link: false, desc: "Random Forest and Linear Regression tuned with Bayesian optimization — 60% accuracy across the 2021 Premier League season.", stack: ["Python", "ML", "Bayesian optimization"] },

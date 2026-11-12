@@ -59,14 +59,17 @@ const buildPalette = (accent, theme) => {
 // Neon paint brush that follows the mouse across the page background, shifting color and spraying droplets.
 export default function PaintTrail() {
   const canvasRef = useRef(null);
+  const burstRef = useRef(null);
 
   useEffect(() => {
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!finePointer || reduceMotion) return;
+    if (reduceMotion) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+    const burstCanvas = burstRef.current;
+    const burstCtx = burstCanvas.getContext("2d");
     let theme = THEMES.dark;
     let palette = [];
     let pointer = null;
@@ -89,15 +92,15 @@ export default function PaintTrail() {
     };
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = burstCanvas.width = window.innerWidth;
+      canvas.height = burstCanvas.height = window.innerHeight;
     };
 
     const scheduleFrame = () => {
       if (!raf) raf = requestAnimationFrame(frame);
     };
 
-    const sprayDroplets = (x, y, baseAngle, spread, count, speed, born) => {
+    const sprayDroplets = (x, y, baseAngle, spread, count, speed, born, foreground = false) => {
       for (let i = 0; i < count; i++) {
         const angle = baseAngle + (Math.random() - 0.5) * spread;
         const velocity = speed * (0.35 + Math.random() * 0.65);
@@ -109,6 +112,7 @@ export default function PaintTrail() {
           radius: 1.5 + Math.random() * 4.5,
           color: palette[colorIndexAt(travelled + Math.random() * 200)].css,
           born,
+          foreground,
         });
       }
     };
@@ -153,16 +157,17 @@ export default function PaintTrail() {
     const drawDroplets = (now) => {
       ctx.globalCompositeOperation = "source-over";
       droplets.forEach((d) => {
+        const layer = d.foreground ? burstCtx : ctx;
         d.x += d.vx;
         d.y += d.vy;
         d.vx *= 0.88;
         d.vy *= 0.88;
         const life = 1 - (now - d.born) / DROPLET_LIFE_MS;
-        ctx.globalAlpha = theme.dropletAlpha * life;
-        ctx.fillStyle = d.color;
-        ctx.beginPath();
-        ctx.arc(d.x, d.y, d.radius, 0, Math.PI * 2);
-        ctx.fill();
+        layer.globalAlpha = (d.foreground ? 0.9 : theme.dropletAlpha) * life;
+        layer.fillStyle = d.color;
+        layer.beginPath();
+        layer.arc(d.x, d.y, d.radius, 0, Math.PI * 2);
+        layer.fill();
       });
     };
 
@@ -180,6 +185,7 @@ export default function PaintTrail() {
       stamps = stamps.filter((s) => now - s.born < STROKE_LIFE_MS);
       droplets = droplets.filter((d) => now - d.born < DROPLET_LIFE_MS);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      burstCtx.clearRect(0, 0, burstCanvas.width, burstCanvas.height);
       drawStamps(now);
       drawDroplets(now);
       ctx.globalAlpha = 1;
@@ -193,9 +199,9 @@ export default function PaintTrail() {
       if (!brush) brush = { ...pointer };
       scheduleFrame();
     };
-    const handlePointerDown = (e) => {
-      if (e.pointerType !== "mouse") return;
-      sprayDroplets(e.clientX, e.clientY, 0, Math.PI * 2, CLICK_DROPLETS, 16, performance.now());
+    const handleClick = (e) => {
+      if (e.detail === 0 || e.target.closest?.(".contact")) return;
+      sprayDroplets(e.clientX, e.clientY, 0, Math.PI * 2, CLICK_DROPLETS, 16, performance.now(), true);
       scheduleFrame();
     };
     const handlePointerOut = (e) => {
@@ -207,8 +213,8 @@ export default function PaintTrail() {
     loadTheme();
     resize();
     window.addEventListener("resize", resize);
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
-    window.addEventListener("pointerdown", handlePointerDown, { passive: true });
+    if (finePointer) window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("click", handleClick, { capture: true, passive: true });
     document.addEventListener("pointerout", handlePointerOut);
     const themeObserver = new MutationObserver(loadTheme);
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
@@ -217,11 +223,14 @@ export default function PaintTrail() {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("click", handleClick, true);
       document.removeEventListener("pointerout", handlePointerOut);
       themeObserver.disconnect();
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="paint-trail" aria-hidden="true" />;
+  return <>
+    <canvas ref={canvasRef} className="paint-trail" aria-hidden="true" />
+    <canvas ref={burstRef} className="paint-trail paint-trail--burst" aria-hidden="true" />
+  </>;
 }
