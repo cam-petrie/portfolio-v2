@@ -233,7 +233,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .case__body { display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr auto; flex: 1; }
 .case__text { padding: clamp(20px, 2.4vw, 28px); display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .case__text p { margin: 0; line-height: 1.55; text-wrap: pretty; }
-.case__text .btn { margin-top: auto; align-self: flex-start; }
+.case__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
 .case__title { margin: 0; font-size: clamp(28px, 2.8vw, 36px); line-height: 0.98; font-weight: 800; font-stretch: 88%; letter-spacing: -0.025em; text-wrap: balance; }
 .case--flagship .case__title { font-size: clamp(34px, 4.2vw, 56px); }
 .case__media { aspect-ratio: 16 / 9; }
@@ -266,6 +266,9 @@ button, input, textarea { font: inherit; color: inherit; }
 /* More work */
 .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
 .work { display: flex; flex-direction: column; }
+@media (hover: hover) {
+  .work:hover { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+}
 .work__media { aspect-ratio: 16 / 9; border-bottom: 1px solid var(--hair); }
 .work__body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .work__title { font-size: 20px; line-height: 1.1; font-weight: 800; font-stretch: 88%; letter-spacing: -0.01em; }

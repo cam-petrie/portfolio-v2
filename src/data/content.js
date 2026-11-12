@@ -23,6 +23,7 @@ export const content = {
   cases: [
     {
       code: "CS-01", slug: "cta", award: true, stats: "metrics",
+      detailPath: "/case-studies/cognitive-talent-analyzer/",
       title: "Cognitive Talent Analyzer™",
       summary: "An AI-driven organizational network analysis platform: survey campaigns in five languages and the 2025 HR Tech Award for Best Innovative Talent Analytics.",
       tags: ["back", "front", "ai"],
@@ -72,6 +73,7 @@ export const content = {
     },
     {
       code: "CS-04", slug: "network-first",
+      detailPath: "/case-studies/network-first/",
       title: "Network First Platform",
       summary: "Built a collaboration platform where members discover shared interests, vote on proposals, and turn supported ideas into projects they can join.",
       tags: ["full"],

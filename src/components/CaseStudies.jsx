@@ -95,9 +95,13 @@ function CaseCard({ c, index, metrics, disciplines }) {
           <ul className="chips">
             {c.stack.slice(0, flagship ? 8 : 5).map((s) => <li key={s}>{s}</li>)}
           </ul>
-          <button className="btn btn--outline btn--sm" aria-expanded={open} aria-controls={id} onClick={handleToggle}>
-            {open ? "Close case study" : "Read case study"} <span aria-hidden="true">{open ? "−" : "+"}</span>
-          </button>
+          <div className="case__actions">
+            <button type="button" className="btn btn--outline btn--sm" aria-expanded={open} aria-controls={id} onClick={handleToggle}>
+              {c.detailPath ? (open ? "Collapse" : "Expand") : (open ? "Close case study" : "Read case study")}
+              <span aria-hidden="true">{open ? "−" : "+"}</span>
+            </button>
+            {c.detailPath && <a className="btn btn--outline btn--sm" href={c.detailPath}>Read case study ↗</a>}
+          </div>
         </div>
         <div className="case__stage" ref={stageRef}>
           <Media className="case__media" src={c.img} alt={c.title} />

@@ -83,8 +83,10 @@ export default function CustomCursor() {
     };
 
     const handlePointerOver = (e) => {
-      const lockTarget = e.target.closest?.(LOCK_TARGETS) ?? null;
+      const free = e.target.closest?.("[data-cursor-free]");
+      const lockTarget = free ? null : (e.target.closest?.(LOCK_TARGETS) ?? null);
       if (lockTarget === target) return;
+      if (free) box = null;
       target = lockTarget;
       frame.classList.toggle("is-locked", Boolean(target));
       dot.classList.toggle("is-locked", Boolean(target));

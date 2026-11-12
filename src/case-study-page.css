@@ -1,0 +1,20 @@
+.story-header { border-bottom: 1px solid var(--hair); }
+.story-header__inner { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.story { max-width: 1120px; }
+.story-intro { padding: clamp(40px, 7vw, 92px) 0 34px; }
+.story-intro h1 { margin: 14px 0 20px; font-size: clamp(44px, 9vw, 108px); line-height: .9; letter-spacing: -.05em; text-transform: uppercase; }
+.story-lede { max-width: 48ch; margin: 0 0 26px; color: var(--muted); font-size: clamp(18px, 2.4vw, 25px); }
+.story-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding: 22px 0; margin: 0 0 30px; border-block: 1px solid var(--hair); }
+.story-facts dt { color: var(--accent-text); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.story-facts dd { margin: 5px 0 0; }
+.story-figure { margin: 0 0 30px; }
+.story-figure img { width: 100%; height: auto; border: 1px solid var(--hair); }
+.story-figure figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
+.story-section { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 3fr); gap: 20px; padding: clamp(28px, 5vw, 56px) 0; border-top: 1px solid var(--hair); }
+.story-section .eyebrow { margin: 5px 0 0; }
+.story-section h2 { margin: 0 0 14px; font-size: clamp(26px, 4vw, 42px); line-height: 1.04; letter-spacing: -.03em; text-wrap: balance; }
+.story-section p:not(.eyebrow) { color: var(--muted); max-width: 68ch; }
+.story-footer { border-top: 1px solid var(--hair); padding: 24px 0 44px; color: var(--accent-text); }
+@media (max-width: 640px) {
+  .story-facts, .story-section { grid-template-columns: 1fr; gap: 12px; }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cognitive Talent Analyzer™ — Cameron Petrie</title>
+  <meta name="description" content="How I led full-stack development of Cognitive Talent Analyzer, from multilingual surveys to network analysis and AI-assisted insights." />
+  <link rel="canonical" href="https://campetrie.com/case-studies/cognitive-talent-analyzer/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Cameron Petrie" />
+  <meta property="og:url" content="https://campetrie.com/case-studies/cognitive-talent-analyzer/" />
+  <meta property="og:title" content="Cognitive Talent Analyzer™ — Cameron Petrie" />
+  <meta property="og:description" content="How Cognitive Talent Solutions turns survey responses and collaboration data into organizational network insights." />
+  <meta property="og:image" content="https://campetrie.com/images/cts.png" />
+  <meta property="og:image:alt" content="Cognitive Talent Analyzer product preview" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" />
+  <link rel="stylesheet" href="/src/styles.css" />
+  <link rel="stylesheet" href="/src/case-study-page.css" />
+  <script>
+    try { const theme = localStorage.getItem("cp-theme"); if (theme === "light") document.documentElement.dataset.theme = theme; } catch {}
+  </script>
+</head>
+<body>
+  <header class="story-header">
+    <div class="wrap story-header__inner">
+      <a class="brand" href="/"><span class="brand__mark">CP</span><span>Cameron Petrie</span></a>
+      <a class="small" href="/#work">← All case studies</a>
+    </div>
+  </header>
+  <main class="wrap story">
+    <article>
+      <header class="story-intro">
+        <p class="eyebrow accent-text">Case 01 / Cognitive Talent Solutions</p>
+        <h1>Cognitive Talent Analyzer™</h1>
+        <p class="story-lede">An organizational network analysis platform that turns survey responses and collaboration data into maps, reports, and insights for workforce decisions.</p>
+        <a class="btn btn--accent" href="https://www.cognitivetalentsolutions.com/" target="_blank" rel="noreferrer">Visit Cognitive Talent Solutions ↗</a>
+      </header>
+      <dl class="story-facts">
+        <div><dt>My role</dt><dd>Full-stack lead, now CTO</dd></div>
+        <div><dt>Network scale</dt><dd>390K+ nodes and 6.92M+ connections</dd></div>
+        <div><dt>Survey reach</dt><dd>Five languages, participants in 78 countries</dd></div>
+      </dl>
+      <figure class="story-figure">
+        <img src="/images/cts.png" alt="Cognitive Talent Analyzer product preview" width="3024" height="1716" />
+        <figcaption>Cognitive Talent Analyzer by Cognitive Talent Solutions.</figcaption>
+      </figure>
+      <section class="story-section">
+        <p class="eyebrow accent-text">01 / The problem</p>
+        <div><h2>Make workplace relationships visible.</h2>
+        <p>An org chart shows reporting lines. It can miss who people go to for advice, where teams collaborate, and who connects groups that rarely work together. Cognitive Talent Analyzer gives organizations a way to collect and explore that evidence.</p>
+        <p>I led development across survey setup, participant management, response tracking, and the dashboards and PDF reports teams use to review findings.</p></div>
+      </section>
+      <section class="story-section">
+        <p class="eyebrow accent-text">02 / Engineering decision</p>
+        <div><h2>Give survey records and relationships different homes.</h2>
+        <p>Survey campaigns need to track participants and responses. Network exploration needs to follow relationships between people. I used PostgreSQL for survey and participant records and Neo4j for the relationships explored in the network views.</p>
+        <p>Survey email delivery runs asynchronously, so it can proceed separately from campaign setup and response tracking. The backend also enforces tenant boundaries so organizations can work in the same product with separate data.</p></div>
+      </section>
+      <section class="story-section">
+        <p class="eyebrow accent-text">03 / What shipped</p>
+        <div><h2>From survey launch to findings teams can use.</h2>
+        <p>Teams can run surveys in five languages, explore networks in ActiveONA, and share results through dashboards and PDF reports. I also built AI-assisted onboarding and analysis with Cogni and contributed causal retention dashboards that help teams explore possible interventions.</p>
+        <p>Cognitive Talent Analyzer won the 2025 HR Tech Award for Best Innovative Talent Analytics.</p>
+        <ul class="chips" aria-label="Technology stack">
+          <li>React</li><li>TypeScript</li><li>Fastify</li><li>PostgreSQL</li><li>Neo4j</li><li>OpenAI API</li>
+        </ul></div>
+      </section>
+    </article>
+    <footer class="story-footer"><a href="/#work">← Back to all case studies</a></footer>
+  </main>
+</body>
+</html>

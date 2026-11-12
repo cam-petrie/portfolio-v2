@@ -12,7 +12,7 @@ export default function MoreWork({ items, disciplines, title = "More work", id }
           const Tag = o.link ? "a" : "div";
           const linkProps = o.link ? { href: o.link, target: "_blank", rel: "noreferrer" } : {};
           return (
-            <Tag key={o.title} className={"card work" + (o.link ? " work--link" : "")} data-cursor-target {...linkProps}>
+            <Tag key={o.title} className={"card work" + (o.link ? " work--link" : "")} data-cursor-free {...linkProps}>
               <Media className="work__media" src={o.img} />
               <span className="work__body">
                 <span className="eyebrow"><span>{disciplines[o.tag].label}</span>{o.link && <span className="accent-text">{o.linkLabel ?? "Live"} ↗</span>}</span>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Network First Platform — Cameron Petrie</title>
+  <meta name="description" content="How I built Network First, a collaboration platform that turns community proposals into projects." />
+  <link rel="canonical" href="https://campetrie.com/case-studies/network-first/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Cameron Petrie" />
+  <meta property="og:url" content="https://campetrie.com/case-studies/network-first/" />
+  <meta property="og:title" content="Network First Platform — Cameron Petrie" />
+  <meta property="og:description" content="From shared interests to projects: building a network map, reliable proposal voting, and member workspaces." />
+  <meta property="og:image" content="https://campetrie.com/images/network-first.png" />
+  <meta property="og:image:alt" content="Network First dashboard showing people and projects connected through membership" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" />
+  <link rel="stylesheet" href="/src/styles.css" />
+  <link rel="stylesheet" href="/src/case-study-page.css" />
+  <script>
+    try { const theme = localStorage.getItem("cp-theme"); if (theme === "light") document.documentElement.dataset.theme = theme; } catch {}
+  </script>
+</head>
+<body>
+  <header class="story-header">
+    <div class="wrap story-header__inner">
+      <a class="brand" href="/"><span class="brand__mark">CP</span><span>Cameron Petrie</span></a>
+      <a class="small" href="/#work">← All case studies</a>
+    </div>
+  </header>
+  <main class="wrap story">
+    <article>
+      <header class="story-intro">
+        <p class="eyebrow accent-text">Case 04 / Full-stack development</p>
+        <h1>Network First<br />Platform</h1>
+        <p class="story-lede">A collaboration platform where members find shared interests, vote on proposals, and turn supported ideas into projects they can join.</p>
+        <a class="btn btn--accent" href="https://network.cognitivetalentsolutions.com/" target="_blank" rel="noreferrer">Visit live platform ↗</a>
+      </header>
+      <dl class="story-facts">
+        <div><dt>My role</dt><dd>Full-stack development and production rollout</dd></div>
+        <div><dt>Core workflow</dt><dd>Discover → propose → ratify → build</dd></div>
+        <div><dt>Stack</dt><dd>React, TypeScript, Node.js, PostgreSQL, Kubernetes</dd></div>
+      </dl>
+      <figure class="story-figure">
+        <img src="/images/network-first.png" alt="Network First dashboard showing a map of people and projects linked by membership" />
+        <figcaption>The Network Pulse dashboard, shown with sample data.</figcaption>
+      </figure>
+      <section class="story-section">
+        <p class="eyebrow accent-text">01 / The problem</p>
+        <div><h2>Make it easier to find work worth joining.</h2>
+        <p>Members needed a way to see who was working on what, find people with shared interests, and turn an idea into a project. I built the explorer, proposal workflow, and member workspaces around that sequence.</p>
+        <p>The network map uses visible project memberships to connect people and work. Its layout stays stable when a member drags a node, so the rest of the graph remains familiar.</p></div>
+      </section>
+      <section class="story-section">
+        <p class="eyebrow accent-text">02 / Engineering decision</p>
+        <div><h2>Make votes and project creation safe to retry.</h2>
+        <p>A double click or a retry after a dropped connection should count as one vote. The database enforces one support record per member and proposal, and counting support and checking whether the proposal has ratified happen in the same transaction.</p>
+        <p>When the author forms a project from a ratified proposal, a unique link back to that proposal prevents retries from creating a second workspace. The governance tests exercise both SQLite for local development and PostgreSQL for deployment.</p></div>
+      </section>
+      <section class="story-section">
+        <p class="eyebrow accent-text">03 / What shipped</p>
+        <div><h2>From a supported idea to a working project.</h2>
+        <p>Members can request to join approved projects and collaborate through project chat and discussion threads. Project leads can manage membership and hand over responsibility.</p>
+        <p>The hosted platform runs on Kubernetes with PostgreSQL and a separate identity service. Production checks confirmed database readiness and verified the project lead controls in the live app.</p></div>
+      </section>
+    </article>
+    <footer class="story-footer"><a href="/#work">← Back to all case studies</a></footer>
+  </main>
+</body>
+</html>
