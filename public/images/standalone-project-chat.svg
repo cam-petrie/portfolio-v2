@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#141818"/>
+  <rect x="76" y="46" width="488" height="268" rx="14" fill="#202727" stroke="#506360"/>
+  <path d="M234 46v268M234 100h330" fill="none" stroke="#506360"/>
+  <g font-family="system-ui,sans-serif" fill="#e8f5f2">
+    <text x="96" y="79" font-size="16" font-weight="700">Project chat</text>
+    <text x="258" y="80" font-size="17" font-weight="700"># general</text>
+    <rect x="91" y="105" width="126" height="31" rx="5" fill="#304944"/>
+    <text x="102" y="126" font-size="13"># general</text>
+    <text x="102" y="160" font-size="13" fill="#acc6bf"># design</text>
+    <text x="102" y="192" font-size="13" fill="#acc6bf"># planning</text>
+  </g>
+  <circle cx="269" cy="134" r="12" fill="#9ed6cc"/>
+  <circle cx="269" cy="215" r="12" fill="#b79ce8"/>
+  <g fill="#78908c"><rect x="291" y="124" width="66" height="8" rx="4"/><rect x="291" y="143" width="220" height="7" rx="3.5"/><rect x="291" y="206" width="51" height="8" rx="4"/><rect x="291" y="225" width="178" height="7" rx="3.5"/></g>
+  <path d="M294 169h13m-13 0 5-5m-5 5 5 5" fill="none" stroke="#9ed6cc" stroke-width="2"/>
+  <text x="315" y="174" fill="#9ed6cc" font-family="system-ui,sans-serif" font-size="12">2 replies</text>
+  <rect x="257" y="263" width="283" height="31" rx="6" fill="#141818" stroke="#506360"/>
+  <text x="269" y="283" fill="#acc6bf" font-family="system-ui,sans-serif" font-size="12">Write a message…</text>
+  <path d="m514 272 12 6-12 6 2-6z" fill="#9ed6cc"/>
+</svg>

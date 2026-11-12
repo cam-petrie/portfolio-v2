@@ -85,6 +85,12 @@ export const content = {
   ],
   other: [
     {
+      title: "Standalone Project Chat", tag: "full", img: "/images/standalone-project-chat.svg",
+      link: "https://github.com/cam-petrie/standalone-project-chat", linkLabel: "GitHub",
+      desc: "An embeddable chat component with discussion rooms, threaded replies, per-room drafts, and moderation controls. Includes a runnable reference backend.",
+      stack: ["React", "TypeScript", "Node.js", "Vite"]
+    },
+    {
       title: "Network First Platform", tag: "full", img: "/images/network-first.png", link: "https://network.cognitivetalentsolutions.com/",
       desc: "A collaboration platform that turns shared interests into community-backed projects, with interactive network maps, proposal voting, project workspaces, and member discovery.",
       stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Kubernetes"]

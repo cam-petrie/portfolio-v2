@@ -15,7 +15,7 @@ export default function MoreWork({ items, disciplines, title = "More work", id }
             <Tag key={o.title} className={"card work" + (o.link ? " work--link" : "")} data-cursor-target {...linkProps}>
               <Media className="work__media" src={o.img} />
               <span className="work__body">
-                <span className="eyebrow"><span>{disciplines[o.tag].label}</span>{o.link && <span className="accent-text">Live ↗</span>}</span>
+                <span className="eyebrow"><span>{disciplines[o.tag].label}</span>{o.link && <span className="accent-text">{o.linkLabel ?? "Live"} ↗</span>}</span>
                 <span className="work__title">{o.title}</span>
                 <span className="muted small">{o.desc}</span>
                 <span className="muted xsmall work__stack">{o.stack.join(" · ")}</span>
